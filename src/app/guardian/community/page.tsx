@@ -1,6 +1,6 @@
 'use client';
 
-// Guardian community page for viewing and sharing coping strategies
+// Guardian community page for viewing and sharing coping strategies with peers
 import React, { useState } from 'react';
 import { GuardianLayout } from '@/components/GuardianLayout';
 import {
