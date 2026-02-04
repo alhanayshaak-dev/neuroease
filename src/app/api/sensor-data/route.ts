@@ -178,8 +178,8 @@ async function storeSensorData(
 ): Promise<string | null> {
   try {
     const supabase = getSupabaseClient();
-    const { data: insertedData, error } = await (supabase
-      .from('sensor_data')
+    const { data: insertedData, error } = await ((supabase
+      .from('sensor_data') as any)
       .insert({
         patient_id: data.patient_id,
         device_id: data.device_id,
