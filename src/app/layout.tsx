@@ -3,6 +3,8 @@ import './globals.css';
 import { AccessibilityProvider } from '@/components/AccessibilityProvider';
 import { GuardianProvider } from '@/context/GuardianContext';
 
+// Trigger fresh build - v2
+
 export const metadata: Metadata = {
   title: 'NeuroFlow - Calm. Control. Independence.',
   description: 'Real-time sensory overload detection and management for autistic individuals',
