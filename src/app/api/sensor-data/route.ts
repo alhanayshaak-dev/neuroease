@@ -178,7 +178,7 @@ async function storeSensorData(
 ): Promise<string | null> {
   try {
     const supabase = getSupabaseClient();
-    const { data: insertedData, error } = await supabase
+    const { data: insertedData, error } = await (supabase
       .from('sensor_data')
       .insert({
         patient_id: data.patient_id,
@@ -195,7 +195,7 @@ async function storeSensorData(
         stress_score: stressScore,
         overload_predicted: overloadPredicted,
         overload_predicted_in_minutes: overloadPredictedInMinutes || null,
-      })
+      }) as any)
       .select('id')
       .single();
 
