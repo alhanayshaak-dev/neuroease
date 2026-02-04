@@ -127,10 +127,11 @@ async function getPatientBaseline(patientId: string): Promise<BaselineMetrics | 
       return null;
     }
 
+    const patientData = data as any;
     return {
-      baseline_hr: data.baseline_hr || 70,
-      baseline_hrv: data.baseline_hrv || 50,
-      baseline_eda: data.baseline_eda || 10,
+      baseline_hr: patientData.baseline_hr || 70,
+      baseline_hrv: patientData.baseline_hrv || 50,
+      baseline_eda: patientData.baseline_eda || 10,
     };
   } catch (error) {
     console.error('Error getting patient baseline:', error);
