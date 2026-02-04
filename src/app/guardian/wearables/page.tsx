@@ -125,7 +125,7 @@ export default function WearablesPage() {
         <div className="mb-8 flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-white mb-1">Wearable Devices</h1>
-            <p className="text-xs text-gray-400">Monitor Violet's health with connected wearables</p>
+            <p className="text-xs text-gray-400">Monitor Violet&apos;s health with connected wearables</p>
           </div>
           <button
             onClick={() => window.history.back()}

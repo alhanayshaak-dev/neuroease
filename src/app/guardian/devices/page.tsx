@@ -390,7 +390,7 @@ export default function DevicesPage() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-lg font-bold text-white mb-1">Devices</h1>
-            <p className="text-xs text-gray-400">Manage Violet's connected devices and accessories</p>
+            <p className="text-xs text-gray-400">Manage Violet&apos;s connected devices and accessories</p>
           </div>
           <button
             onClick={() => window.history.back()}

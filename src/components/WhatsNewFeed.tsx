@@ -32,7 +32,7 @@ const DEFAULT_UPDATES: FeatureUpdate[] = [
   {
     id: 'update-2',
     title: 'Therapist Collaboration Tools',
-    description: 'Share insights with your therapist and get personalized recommendations.',
+    description: 'Share insights with your therapist and get personalized recommendations&apos;.',
     category: 'feature',
     date: '2024-01-10',
     icon: <Target className="w-5 h-5" />,
@@ -107,7 +107,7 @@ export function WhatsNewFeed({ updates = DEFAULT_UPDATES, onDismiss }: WhatsNewF
       {/* Header */}
       <div className="flex items-center gap-2 mb-4">
         <Bell className="w-5 h-5 text-primary-400" />
-        <h2 className="text-xl font-semibold text-neutral-100">What's New</h2>
+        <h2 className="text-xl font-semibold text-neutral-100">What&apos;s New</h2>
       </div>
 
       {/* Carousel */}

@@ -192,7 +192,7 @@ export function PrivacyDashboard({
               <div className="flex-1">
                 <h4 className="font-semibold text-neutral-100">Conversation Simplification</h4>
                 <p className="text-sm text-neutral-400 mt-1">
-                  AI simplifies complex conversations and detects social cues
+                  AI simplifies complex conversations and detects social cues&apos;
                 </p>
               </div>
               {!isReadOnly && (

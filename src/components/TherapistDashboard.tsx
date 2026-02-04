@@ -75,7 +75,7 @@ export function TherapistDashboard({ patientData, isLoading = false }: Therapist
       <div>
         <h1 className="text-3xl font-bold text-neutral-100 mb-2">Therapist Dashboard</h1>
         <p className="text-neutral-400">
-          Monitor your patients' progress and manage treatment goals
+          Monitor your patients&apos; progress and manage treatment goals
         </p>
       </div>
 

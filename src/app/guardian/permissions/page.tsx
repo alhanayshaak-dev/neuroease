@@ -157,7 +157,7 @@ export default function PermissionsPage() {
 
           <div className="mb-8">
             <h1 className="text-2xl font-bold text-white mb-1">
-              {guardians.find(g => g.id === selectedGuardian)?.name}'s Permissions
+              {guardians.find(g => g.id === selectedGuardian)?.name}&apos;s Permissions
             </h1>
             <p className="text-gray-400">
               {guardians.find(g => g.id === selectedGuardian)?.relationship}

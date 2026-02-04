@@ -155,7 +155,7 @@ export function CareCircleMessages({ patientId }: CareCircleMessagesProps) {
             <option value="alert">Alert</option>
             <option value="suggestion">Suggestion</option>
           </select>
-          <button type="button"
+          <button
             type="submit"
             disabled={isSending || !newMessage.trim()}
             className="px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"

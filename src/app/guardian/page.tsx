@@ -111,11 +111,11 @@ export default function GuardianDashboard() {
           <DashboardChatbot />
         </div>
 
-        {/* Violet's Status & History Carousel */}
+        {/* Violet&apos;s Status &amp; History Carousel */}
         <div className="mb-6">
           <div className="overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide">
             <div className="flex gap-4 min-w-min">
-              {/* Violet's Current Status */}
+              {/* Violet&apos;s Current Status */}
               <div className="flex-shrink-0 w-[320px]">
                 <VioletStatusCard 
                   status="rising" 
@@ -222,7 +222,7 @@ export default function GuardianDashboard() {
           <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
             <div className="bg-navy-900 border border-teal-600 rounded-lg p-6 max-w-md w-full mx-4">
               <div className="flex items-start justify-between mb-4">
-                <h2 className="text-white text-xl font-bold">Violet's Status</h2>
+                <h2 className="text-white text-xl font-bold">Violet&apos;s Status</h2>
                 <button type="button" onClick={() => setShowVioletStatus(false)} className="text-gray-400 hover:text-white">
                   ✕
                 </button>

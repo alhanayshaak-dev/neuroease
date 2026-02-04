@@ -93,7 +93,7 @@ export function InviteGuardianForm({ onSubmit, isLoading = false }: InviteGuardi
         <div className="text-sm text-teal-400 bg-teal-500/10 p-3 rounded-lg">{success}</div>
       )}
 
-      <button type="button"
+      <button
         type="submit"
         disabled={isLoading}
         className="w-full px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"

@@ -60,7 +60,7 @@ export default function PatientPage() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-8 flex items-center justify-between">
           <div>
-            <h1 className="text-lg font-bold text-white mb-1 truncate">{session?.patientName}'s Profile</h1>
+            <h1 className="text-lg font-bold text-white mb-1 truncate">{session?.patientName}&apos;s Profile</h1>
             <p className="text-xs text-gray-400">
               Age {session?.patientAge} • Diagnosed with Autism Spectrum Disorder
             </p>
@@ -79,7 +79,6 @@ export default function PatientPage() {
           {['overview', 'tracking', 'analytics', 'health', 'insights'].map((tab) => (
             <button type="button"
               key={tab}
-              type="button"
               onClick={() => setActiveTab(tab as any)}
               className={`px-4 py-2 font-semibold transition-colors whitespace-nowrap ${
                 activeTab === tab
@@ -620,7 +619,7 @@ export default function PatientPage() {
                 </div>
                 <div className="bg-purple-900/20 border border-purple-600/30 rounded p-4">
                   <p className="text-purple-400 font-semibold text-sm mb-2">Strategy Effectiveness: Deep Breathing</p>
-                  <p className="text-gray-300 text-sm">Deep breathing is 92% effective at reducing stress. It's the most reliable strategy. Use it proactively.</p>
+                  <p className="text-gray-300 text-sm">Deep breathing is 92% effective at reducing stress. It&apos;s the most reliable strategy. Use it proactively.</p>
                 </div>
                 <div className="bg-green-900/20 border border-green-600/30 rounded p-4">
                   <p className="text-green-400 font-semibold text-sm mb-2">Medication Impact: Positive</p>

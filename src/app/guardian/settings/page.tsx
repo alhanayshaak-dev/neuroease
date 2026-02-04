@@ -98,7 +98,7 @@ export default function SettingsPage() {
                 <div className="flex items-center justify-between p-4 bg-black/50 rounded-lg">
                   <div>
                     <p className="text-white font-semibold">Auto-Sync Data</p>
-                    <p className="text-gray-400 text-sm">Automatically sync data with Violet's devices</p>
+                    <p className="text-gray-400 text-sm">Automatically sync data with Violet&apos;s devices</p>
                   </div>
                   <button type="button"
                     onClick={() => toggleSetting('autoSync')}
@@ -277,7 +277,7 @@ export default function SettingsPage() {
                     <p className="text-white font-semibold flex items-center gap-2">
                       <Globe size={18} /> Location Tracking
                     </p>
-                    <p className="text-gray-400 text-sm">Allow location tracking for Violet's safety</p>
+                    <p className="text-gray-400 text-sm">Allow location tracking for Violet&apos;s safety</p>
                   </div>
                   <button type="button"
                     onClick={() => toggleSetting('locationTracking')}

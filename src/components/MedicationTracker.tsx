@@ -118,7 +118,7 @@ export function MedicationTracker({
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <h4 className="font-semibold text-neutral-100">
-                        {medication.medication_name}
+                        {medication.medication_name}&apos;s
                       </h4>
                       <p className="text-sm text-neutral-400">
                         {medication.dosage} • {medication.frequency}
@@ -135,7 +135,7 @@ export function MedicationTracker({
                   {/* Today's Progress */}
                   <div className="mb-3 p-2 bg-neutral-700/50 rounded">
                     <div className="flex items-center justify-between mb-2">
-                      <p className="text-xs text-neutral-400">Today's doses</p>
+                      <p className="text-xs text-neutral-400">Today&apos;s doses</p>
                       <p className="text-xs font-semibold text-neutral-300">
                         {dosesToday} / {expectedDoses}
                       </p>

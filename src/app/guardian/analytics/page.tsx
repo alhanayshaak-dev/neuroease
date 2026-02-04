@@ -66,7 +66,7 @@ export default function AnalyticsPage() {
         <div className="mb-8 flex items-center justify-between">
           <div>
             <h1 className="text-lg font-bold text-white mb-1">Analytics Dashboard</h1>
-            <p className="text-xs text-gray-400">Comprehensive insights into Violet's health and wellbeing</p>
+            <p className="text-xs text-gray-400">Comprehensive insights into Violet&apos;s health and wellbeing</p>
           </div>
           <button
             onClick={() => window.history.back()}

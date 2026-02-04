@@ -591,7 +591,7 @@ export default function AccountPage() {
                 <AlertTriangle size={24} className="text-red-400" />
                 <h2 className="text-white text-xl font-bold">Logout</h2>
               </div>
-              <p className="text-gray-300 mb-6">Are you sure you want to logout? You'll need to login again to access your account.</p>
+              <p className="text-gray-300 mb-6">Are you sure you want to logout? You&apos;ll need to login again to access your account.</p>
               <div className="flex gap-2">
                 <button type="button"
                   onClick={() => {
