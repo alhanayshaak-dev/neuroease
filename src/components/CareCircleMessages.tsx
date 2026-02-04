@@ -38,12 +38,15 @@ export function CareCircleMessages({}: CareCircleMessagesProps) {
   }, []);
 
   // Subscribe to real-time updates
-  useRealtimeSubscription('care_circle_messages', (payload) => {
-    if (payload.eventType === 'INSERT') {
-      setMessages((prev) => [payload.new as Message, ...prev]);
-    } else if (payload.eventType === 'DELETE') {
-      setMessages((prev) => prev.filter((m) => m.id !== payload.old.id));
-    }
+  useRealtimeSubscription({
+    tableName: 'care_circle_messages',
+    onData: (payload) => {
+      if (payload.eventType === 'INSERT') {
+        setMessages((prev) => [payload.new as Message, ...prev]);
+      } else if (payload.eventType === 'DELETE') {
+        setMessages((prev) => prev.filter((m) => m.id !== payload.old.id));
+      }
+    },
   });
 
   const loadMessages = async () => {
