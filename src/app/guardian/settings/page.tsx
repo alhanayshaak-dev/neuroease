@@ -15,7 +15,6 @@ import {
   Database,
   Shield,
   AlertCircle,
-  CheckCircle,
   Toggle2,
 } from 'lucide-react';
 
