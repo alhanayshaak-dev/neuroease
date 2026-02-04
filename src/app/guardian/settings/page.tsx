@@ -15,7 +15,6 @@ import {
   Database,
   Shield,
   AlertCircle,
-  Toggle2,
 } from 'lucide-react';
 
 export default function SettingsPage() {
