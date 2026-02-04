@@ -7,7 +7,7 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-export async function GET(_request, { params }: { params: { id: string } }) {
+export async function GET(_request: any, { params }: { params: { id: string } }) {
   try {
     // Get the current user
     const {
