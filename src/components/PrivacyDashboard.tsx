@@ -23,6 +23,7 @@ export function PrivacyDashboard({
   onDeleteData,
   isReadOnly = false,
 }: PrivacyDashboardProps) {
+  // Force rebuild
   const [localSettings, setLocalSettings] = useState<AIAccessSettings>(settings);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
