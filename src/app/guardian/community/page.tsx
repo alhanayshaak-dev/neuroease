@@ -12,7 +12,6 @@ import {
   BookOpen,
   Award,
   TrendingUp,
-  Plus,
   User,
 } from 'lucide-react';
 import {
