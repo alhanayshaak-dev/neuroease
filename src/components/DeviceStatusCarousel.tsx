@@ -18,9 +18,8 @@ interface DeviceStatusCarouselProps {
 }
 
 export function DeviceStatusCarousel({ devices }: DeviceStatusCarouselProps) {
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+  const handleScroll = () => {
     // Scroll position tracking for future use
-    const scrollLeft = (e.target as HTMLDivElement).scrollLeft;
   };
 
   const handleDeviceClick = (deviceId: string) => {
