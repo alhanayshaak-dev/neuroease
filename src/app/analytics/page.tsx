@@ -7,6 +7,8 @@ import { AnalyticsTrends } from '@/utils/analytics';
 
 type TimePeriod = 'day' | 'week' | 'month';
 
+// Analytics page for viewing stress patterns and trends
+
 export default function AnalyticsPage() {
   const { user } = useAuth();
   const [trends, setTrends] = useState<AnalyticsTrends | null>(null);
