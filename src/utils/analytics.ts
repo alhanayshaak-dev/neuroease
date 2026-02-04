@@ -7,6 +7,23 @@ export interface StressTrend {
   hrv: number;
 }
 
+export interface AnalyticsTrends {
+  time_period: string;
+  start_date: string;
+  end_date: string;
+  total_data_points: number;
+  average_stress: number;
+  peak_stress: number;
+  min_stress: number;
+  stress_trend: any[];
+  stress_by_location: any[];
+  hardest_times: any[];
+  trigger_frequencies: any[];
+  coping_effectiveness: any[];
+  trend_direction: 'improving' | 'stable' | 'worsening';
+  trend_percentage_change: number;
+}
+
 export interface CorrelationData {
   medication: number;
   weather: number;
@@ -27,6 +44,23 @@ export interface ComparativeInsights {
   monthOverMonth: number;
   trend: 'improving' | 'stable' | 'worsening';
   streakDays: number;
+}
+
+export interface AnalyticsTrends {
+  time_period: string;
+  start_date: string;
+  end_date: string;
+  total_data_points: number;
+  average_stress: number;
+  peak_stress: number;
+  min_stress: number;
+  stress_trend: any[];
+  stress_by_location: any[];
+  hardest_times: any[];
+  trigger_frequencies: any[];
+  coping_effectiveness: any[];
+  trend_direction: 'improving' | 'stable' | 'worsening';
+  trend_percentage_change: number;
 }
 
 // Generate mock stress trends
