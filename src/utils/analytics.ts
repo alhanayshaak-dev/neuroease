@@ -46,23 +46,6 @@ export interface ComparativeInsights {
   streakDays: number;
 }
 
-export interface AnalyticsTrends {
-  time_period: string;
-  start_date: string;
-  end_date: string;
-  total_data_points: number;
-  average_stress: number;
-  peak_stress: number;
-  min_stress: number;
-  stress_trend: any[];
-  stress_by_location: any[];
-  hardest_times: any[];
-  trigger_frequencies: any[];
-  coping_effectiveness: any[];
-  trend_direction: 'improving' | 'stable' | 'worsening';
-  trend_percentage_change: number;
-}
-
 // Generate mock stress trends
 export function generateStressTrends(days: number = 7): StressTrend[] {
   const trends: StressTrend[] = [];
