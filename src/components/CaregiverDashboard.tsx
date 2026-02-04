@@ -25,7 +25,9 @@ export function CaregiverDashboard({ patientId }: CaregiverDashboardProps) {
   const [events, setEvents] = useState<SensorData[]>([]);
 
   // Subscribe to sensor data for this patient
-  const sensorData = useSensorDataSubscription(patientId);
+  const sensorData = useSensorDataSubscription({
+    patientId,
+  });
 
   useEffect(() => {
     loadPatientData();
