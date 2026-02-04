@@ -1,5 +1,6 @@
 'use client';
 
+// Accessibility settings component for managing user preferences
 import { useAccessibility } from '@/hooks/useAccessibility';
 import { Moon, Type, Zap, Eye, Keyboard, RotateCcw } from 'lucide-react';
 
