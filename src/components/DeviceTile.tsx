@@ -20,7 +20,6 @@ interface DeviceTileProps {
 }
 
 export function DeviceTile({ device, onSettings, onRemove }: DeviceTileProps) {
-  const connectionStatus = getConnectionStatus(device);
   const batteryPercentage = device.battery_level;
   const isConnected = device.is_connected;
   const hasDamage = Object.keys(device.damage_state || {}).length > 0;
