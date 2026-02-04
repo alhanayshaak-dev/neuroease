@@ -212,7 +212,7 @@ async function storeSensorData(
 }
 
 /**
- * Publish sensor data via Supabase Realtime
+ * Publish sensor data via Supabase Realtime to connected clients
  */
 async function publishSensorData(
   patientId: string,
