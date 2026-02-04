@@ -11,7 +11,7 @@ import {
   AlertCircle,
 } from 'lucide-react';
 import { Device } from '@/types/database';
-import { getConnectionStatus, formatBatteryLevel, formatLastSync } from '@/utils/devices';
+import { formatBatteryLevel, formatLastSync } from '@/utils/devices';
 
 interface DeviceTileProps {
   device: Device;
