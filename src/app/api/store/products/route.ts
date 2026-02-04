@@ -4,7 +4,7 @@
  * Validates: Requirements 16.1, 16.2
  */
 
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 const mockProducts = [
   {
