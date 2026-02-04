@@ -330,7 +330,7 @@ export function PrivacyDashboard({
           <p className="font-semibold text-neutral-300 mb-1">Privacy Notice</p>
           <p>
             Your data is encrypted and stored securely. You have full control over what data is
-            collected and how it's used. All AI features are disabled by default and require your
+            collected and how it&apos;s used. All AI features are disabled by default and require your
             explicit consent.
           </p>
         </div>
