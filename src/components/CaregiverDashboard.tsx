@@ -1,6 +1,6 @@
 'use client';
 
-// Force rebuild v6
+// Force rebuild v7
 
 import { useEffect, useState } from 'react';
 import { Database } from '@/types/database';
@@ -24,9 +24,16 @@ export function CaregiverDashboard({ patientId }: CaregiverDashboardProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [events, setEvents] = useState<SensorData[]>([]);
 
+  const [latestSensorData, setLatestSensorData] = useState<SensorData | null>(null);
+
   // Subscribe to sensor data for this patient
-  const sensorData = useSensorDataSubscription({
+  const sensorDataSubscription = useSensorDataSubscription({
     patientId,
+    onSensorData: (payload) => {
+      if (payload.new) {
+        setLatestSensorData(payload.new);
+      }
+    },
   });
 
   useEffect(() => {
@@ -34,12 +41,12 @@ export function CaregiverDashboard({ patientId }: CaregiverDashboardProps) {
   }, [patientId]);
 
   useEffect(() => {
-    if (sensorData) {
+    if (latestSensorData) {
       // Update patient status based on latest sensor data
       setPatient((prev) => {
         if (!prev) return prev;
 
-        const stressScore = sensorData.stress_score;
+        const stressScore = latestSensorData.stress_score;
         let status: 'calm' | 'rising' | 'overload' = 'calm';
 
         if (stressScore >= 75) {
@@ -57,9 +64,9 @@ export function CaregiverDashboard({ patientId }: CaregiverDashboardProps) {
       });
 
       // Add to events timeline
-      setEvents((prev) => [sensorData, ...prev].slice(0, 20));
+      setEvents((prev) => [latestSensorData, ...prev].slice(0, 20));
     }
-  }, [sensorData]);
+  }, [latestSensorData]);
 
   const loadPatientData = async () => {
     try {
