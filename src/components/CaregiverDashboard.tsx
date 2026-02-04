@@ -27,7 +27,7 @@ export function CaregiverDashboard({ patientId }: CaregiverDashboardProps) {
   const [latestSensorData, setLatestSensorData] = useState<SensorData | null>(null);
 
   // Subscribe to sensor data for this patient
-  const sensorDataSubscription = useSensorDataSubscription({
+  useSensorDataSubscription({
     patientId,
     onSensorData: (payload) => {
       if (payload.new) {
