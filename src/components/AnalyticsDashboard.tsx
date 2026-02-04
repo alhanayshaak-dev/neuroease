@@ -1,6 +1,7 @@
 'use client';
 
 // Analytics dashboard component for displaying metrics
+// Force rebuild
 import React from 'react';
 import {
   LineChart,
