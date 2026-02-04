@@ -9,7 +9,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
-import { calculateStressScore, getStressStatus } from '@/utils/stress';
+import { calculateStressScore } from '@/utils/stress';
 import { predictOverload, shouldDisplayPrediction } from '@/lib/anthropic';
 import type { Database } from '@/types/database';
 import type { SensorMetrics, BaselineMetrics } from '@/utils/stress';
