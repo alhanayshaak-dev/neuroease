@@ -279,7 +279,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
     // Get recent sensor data for overload prediction
     const recentData = await getRecentSensorData(sensorDataRequest.patient_id);
-    const recentStressScores = recentData.map((d) => d.stress_score);
 
     // Predict overload
     let overloadPredicted = false;
