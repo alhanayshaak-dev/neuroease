@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { AnalyticsDashboard } from '@/components/AnalyticsDashboard';
 import { AnalyticsTrends } from '@/utils/analytics';
-import { Calendar } from 'lucide-react';
 
 type TimePeriod = 'day' | 'week' | 'month';
 
