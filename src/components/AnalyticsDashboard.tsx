@@ -18,7 +18,7 @@ import {
   Pie,
   Cell,
 } from 'recharts';
-import { Download, FileText, Sheet } from 'lucide-react';
+import { FileText, Sheet } from 'lucide-react';
 import { AnalyticsTrends } from '@/utils/analytics';
 
 interface AnalyticsDashboardProps {
