@@ -1,5 +1,7 @@
 'use client';
 
+// Force rebuild v5
+
 import { useEffect, useState } from 'react';
 import { Database } from '@/types/database';
 import { useSensorDataSubscription } from '@/hooks/useSensorDataSubscription';
