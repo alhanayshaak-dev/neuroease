@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { Database } from '@/types/database';
-import { StatusBadge } from '@/components/StatusBadge';
 import { useSensorDataSubscription } from '@/hooks/useSensorDataSubscription';
 
 type SensorData = Database['public']['Tables']['sensor_data']['Row'];
