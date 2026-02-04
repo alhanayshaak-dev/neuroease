@@ -1,6 +1,6 @@
 'use client';
 
-// Force rebuild v5
+// Force rebuild v6
 
 import { useEffect, useState } from 'react';
 import { Database } from '@/types/database';
