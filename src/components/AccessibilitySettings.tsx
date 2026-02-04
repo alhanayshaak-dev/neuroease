@@ -1,7 +1,7 @@
 'use client';
 
 import { useAccessibility } from '@/hooks/useAccessibility';
-import { Moon, Sun, Type, Zap, Eye, Keyboard, RotateCcw } from 'lucide-react';
+import { Moon, Type, Zap, Eye, Keyboard, RotateCcw } from 'lucide-react';
 
 export interface AccessibilitySettingsProps {
   onClose?: () => void;
