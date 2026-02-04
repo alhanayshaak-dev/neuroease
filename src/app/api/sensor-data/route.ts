@@ -216,7 +216,7 @@ async function storeSensorData(
  */
 async function publishSensorData(
   patientId: string,
-  sensorDataId: string,
+  _sensorDataId: string,
   stressScore: number,
   overloadPredicted: boolean
 ): Promise<void> {
