@@ -1,6 +1,6 @@
 /**
  * GET /api/store/products
- * Retrieves all available store products
+ * Retrieves all available store products for purchase
  * Validates: Requirements 16.1, 16.2
  */
 
