@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Smartphone, Wifi, WifiOff, Battery } from 'lucide-react';
+import { Wifi, WifiOff } from 'lucide-react';
 
 interface Device {
   id: string;
