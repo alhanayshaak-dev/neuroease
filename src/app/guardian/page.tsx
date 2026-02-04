@@ -380,7 +380,7 @@ export default function GuardianDashboard() {
         {/* Emergency Feature */}
         {emergencyMode && (
           <div className="fixed inset-0 z-50 pointer-events-none">
-            <div className="fixed top-[210px] left-[16px] w-[320px] bg-black border border-red-600 rounded-lg p-6 text-center relative pointer-events-auto max-h-[620px] overflow-y-auto">
+            <div className="fixed top-[210px] left-[16px] w-[320px] bg-black rounded-lg p-6 text-center relative pointer-events-auto max-h-[620px] overflow-y-auto">
               <button type="button"
                 onClick={() => {
                   setEmergencyMode(false);
