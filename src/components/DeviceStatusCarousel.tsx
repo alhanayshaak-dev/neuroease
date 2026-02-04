@@ -1,5 +1,6 @@
 'use client';
 
+// Force rebuild v3
 import React from 'react';
 import { Wifi, WifiOff } from 'lucide-react';
 
