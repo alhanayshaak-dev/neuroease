@@ -2,7 +2,6 @@
 
 // Analytics dashboard component for displaying metrics
 // Force rebuild v2
-import React from 'react';
 import {
   LineChart,
   Line,
@@ -19,7 +18,7 @@ import {
   Cell,
 } from 'recharts';
 import { FileText, Sheet } from 'lucide-react';
-import { AnalyticsTrends } from '@/utils/analytics';
+import type { AnalyticsTrends } from '@/utils/analytics';
 
 interface AnalyticsDashboardProps {
   trends: AnalyticsTrends | null;
