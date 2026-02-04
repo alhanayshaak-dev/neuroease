@@ -3,10 +3,8 @@ import './globals.css';
 import { AccessibilityProvider } from '@/components/AccessibilityProvider';
 import { GuardianProvider } from '@/context/GuardianContext';
 
-// Trigger fresh build - v2
-
 export const metadata: Metadata = {
-  title: 'NeuroFlow - Calm. Control. Independence.',
+  title: 'NeuroEase - Ease. Elevate. Empower.',
   description: 'Real-time sensory overload detection and management for autistic individuals',
 };
 
@@ -19,10 +17,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="dark">
-      <body className="bg-neutral-950 text-neutral-50 antialiased">
+      <body className="bg-gray-900 text-neutral-50 antialiased">
         <AccessibilityProvider>
           <GuardianProvider>
-            <div className="min-h-screen">{children}</div>
+            {children}
           </GuardianProvider>
         </AccessibilityProvider>
       </body>

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { BarChart3, Download, Trash2, AlertCircle } from 'lucide-react';
+import { Download, Trash2, AlertCircle } from 'lucide-react';
 
 export function SettingsPrivacyTab() {
   const [analyticsEnabled, setAnalyticsEnabled] = useState(true);
@@ -20,7 +20,7 @@ export function SettingsPrivacyTab() {
             <div className="flex items-center justify-between">
               <div>
                 <label className="text-gray-300 font-semibold flex items-center gap-2">
-                  <BarChart3 size={18} /> Analytics & Usage Data
+                  <Download size={18} /> Analytics & Usage Data
                 </label>
                 <p className="text-gray-500 text-sm mt-1">Help us improve by sharing usage data</p>
               </div>

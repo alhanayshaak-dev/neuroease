@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { HardDrive, Calendar, RotateCcw, AlertCircle } from 'lucide-react';
+import { HardDrive, Calendar, AlertCircle } from 'lucide-react';
 
 export function SettingsBackupTab() {
   const [autoBackupEnabled, setAutoBackupEnabled] = useState(true);
@@ -78,7 +78,7 @@ export function SettingsBackupTab() {
             <div className="flex items-center justify-between">
               <div>
                 <label className="text-gray-300 font-semibold flex items-center gap-2">
-                  <RotateCcw size={18} /> Restore from Backup
+                  <HardDrive size={18} /> Restore from Backup
                 </label>
                 <p className="text-gray-500 text-sm mt-1">Restore your data from a previous backup</p>
               </div>

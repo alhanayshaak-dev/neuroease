@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Calendar, Clock, MapPin, ChevronDown, ChevronUp, Check } from 'lucide-react';
+import { Calendar, Clock, MapPin, ChevronDown, Check } from 'lucide-react';
 import {
   formatAppointmentTime,
   getAppointmentStatus,
@@ -156,7 +156,7 @@ export function AppointmentCard({
             </div>
           )}
           {expanded ? (
-            <ChevronUp size={20} className="text-neutral-400" />
+            <ChevronDown size={20} className="text-neutral-400 rotate-180" />
           ) : (
             <ChevronDown size={20} className="text-neutral-400" />
           )}

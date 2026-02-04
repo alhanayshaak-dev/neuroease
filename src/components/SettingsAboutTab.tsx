@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Info, BookOpen, Mail } from 'lucide-react';
+import { Info, Mail } from 'lucide-react';
 
 export function SettingsAboutTab() {
   return (
@@ -35,7 +35,7 @@ export function SettingsAboutTab() {
           {/* Legal Documents */}
           <div className="pb-6 border-b border-teal-600/20">
             <h3 className="text-gray-300 font-semibold mb-4 flex items-center gap-2">
-              <BookOpen size={18} /> Legal Documents
+              <Info size={18} /> Legal Documents
             </h3>
             <div className="space-y-2">
               <button type="button" className="w-full text-left px-4 py-3 bg-black hover:bg-gray-900 border border-teal-600/30 rounded transition-colors">

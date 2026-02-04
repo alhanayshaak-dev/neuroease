@@ -259,15 +259,3 @@ export function generateUserProfiles(): UserProfile[] {
     },
   ];
 }
-
-export function generateCommunityChallenge() {
-  return {
-    id: 'challenge-1',
-    title: '7-Day Breathing Challenge',
-    description: 'Practice deep breathing for 5 minutes daily',
-    participants: 234,
-    startDate: '2024-02-01',
-    endDate: '2024-02-07',
-    reward: '50 points',
-  };
-}

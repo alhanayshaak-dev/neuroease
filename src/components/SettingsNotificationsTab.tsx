@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Volume2, Vibrate, Clock } from 'lucide-react';
+import { Volume2, Clock } from 'lucide-react';
 
 export function SettingsNotificationsTab() {
   const [soundEnabled, setSoundEnabled] = useState(true);
@@ -40,7 +40,7 @@ export function SettingsNotificationsTab() {
           <div className="pb-6 border-b border-teal-600/20">
             <div className="flex items-center justify-between">
               <label className="text-gray-300 font-semibold flex items-center gap-2">
-                <Vibrate size={18} /> Vibration
+                <Volume2 size={18} /> Vibration
               </label>
               <button type="button"
                 onClick={() => setVibrationEnabled(!vibrationEnabled)}

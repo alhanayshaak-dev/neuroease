@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Type, Eye, Contrast, Globe } from 'lucide-react';
+import { Type, Eye, Globe } from 'lucide-react';
 
 export function SettingsAccessibilityTab() {
   const [textSize, setTextSize] = useState('medium');
@@ -62,7 +62,7 @@ export function SettingsAccessibilityTab() {
           <div className="pb-6 border-b border-teal-600/20">
             <div className="flex items-center justify-between">
               <label className="text-gray-300 font-semibold flex items-center gap-2">
-                <Contrast size={18} /> High Contrast Mode
+                <Eye size={18} /> High Contrast Mode
               </label>
               <button type="button"
                 onClick={() => setHighContrast(!highContrast)}

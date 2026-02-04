@@ -236,7 +236,7 @@ Create `.env.local` file in project root:
 
 ```env
 # Supabase Configuration
-NEXT_PUBLIC_SUPABASE_URL=https://udgxrouygmqpblpjmfol.supabase.co
+NEXT_PUBLIC_SUPABASE_URL=https://your-supabase-url.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
 
 # Anthropic API (for AI features)

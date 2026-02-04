@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Zap, Code, Store, CheckCircle2 } from 'lucide-react';
+import { Zap, Store, CheckCircle2 } from 'lucide-react';
 
 export function SettingsIntegrationsTab() {
   const [showConnectedApps, setShowConnectedApps] = useState(false);
@@ -66,7 +66,7 @@ export function SettingsIntegrationsTab() {
           <div className="pb-6 border-b border-teal-600/20">
             <div className="flex items-center justify-between mb-4">
               <label className="text-gray-300 font-semibold flex items-center gap-2">
-                <Code size={18} /> API Keys
+                <Zap size={18} /> API Keys
               </label>
               <button type="button"
                 onClick={() => setShowAPIKeys(!showAPIKeys)}

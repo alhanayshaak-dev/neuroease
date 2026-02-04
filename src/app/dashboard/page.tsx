@@ -5,12 +5,14 @@ import { useGuardianContext } from '@/context/GuardianContext';
 import { VioletStatusCard } from '@/components/VioletStatusCard';
 import { DeviceStatusCarousel } from '@/components/DeviceStatusCarousel';
 import { AlertsPanel } from '@/components/AlertsPanel';
-import { AlertCircle } from 'lucide-react';
+import { AlertCircle, Home, Heart, Smartphone, Users, Settings } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function DashboardPage() {
   const { session, setSession } = useGuardianContext();
+  const router = useRouter();
+  const [activeTab, setActiveTab] = React.useState('home');
 
-  // Initialize with mock session if not authenticated
   React.useEffect(() => {
     if (!session) {
       setSession({
@@ -88,12 +90,17 @@ export default function DashboardPage() {
     },
   ];
 
+  const handleNavigation = (tab: string, route: string) => {
+    setActiveTab(tab);
+    router.push(route);
+  };
+
   if (!session) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <div className="text-center">
+      <div className="flex items-center justify-center min-h-screen bg-gray-900">
+        <div className="text-center text-white">
           <AlertCircle size={48} className="text-red-400 mx-auto mb-4" />
-          <p className="text-white text-lg">Not authenticated</p>
+          <p className="text-lg">Not authenticated</p>
           <p className="text-gray-400">Please log in to continue</p>
         </div>
       </div>
@@ -101,93 +108,117 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
-      {/* Professional Header */}
-      <header className="sticky top-0 z-50 w-full bg-blue-900 py-6 px-6 border-b-2 border-cyan-400">
-        <div className="max-w-7xl mx-auto flex items-center justify-center gap-6">
-          {/* Brain Logo SVG */}
-          <div className="flex-shrink-0">
-            <svg
-              width="80"
-              height="80"
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="50" cy="50" r="40" stroke="#06b6d4" strokeWidth="2" />
-              <circle cx="30" cy="30" r="3" fill="#06b6d4" />
-              <circle cx="70" cy="30" r="3" fill="#06b6d4" />
-              <circle cx="50" cy="50" r="3" fill="#06b6d4" />
-              <circle cx="30" cy="70" r="3" fill="#06b6d4" />
-              <circle cx="70" cy="70" r="3" fill="#06b6d4" />
-            </svg>
-          </div>
+    <div className="flex items-center justify-center min-h-screen bg-gray-900 p-4">
+      {/* Mobile Phone Frame */}
+      <div className="relative w-full max-w-sm bg-black rounded-3xl shadow-2xl overflow-hidden border-8 border-gray-800">
+        {/* Notch */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-7 bg-black rounded-b-3xl z-50" />
 
-          {/* Text Content */}
-          <div className="text-center">
-            <h1 className="text-3xl font-black text-cyan-400 tracking-wider mb-1">
-              NEUROEASE
-            </h1>
-            <p className="text-sm text-cyan-300 font-bold tracking-widest">
-              EASE. ELEVATE. EMPOWER
-            </p>
-          </div>
-        </div>
-      </header>
+        {/* Phone Content */}
+        <div className="w-full h-screen bg-black text-white flex flex-col overflow-hidden">
+          {/* Header */}
+          <header className="bg-gradient-to-b from-blue-900 to-blue-800 px-4 pt-8 pb-4 border-b border-cyan-400/30">
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="40" stroke="#06b6d4" strokeWidth="2" />
+                <circle cx="30" cy="30" r="3" fill="#06b6d4" />
+                <circle cx="70" cy="30" r="3" fill="#06b6d4" />
+                <circle cx="50" cy="50" r="3" fill="#06b6d4" />
+                <circle cx="30" cy="70" r="3" fill="#06b6d4" />
+                <circle cx="70" cy="70" r="3" fill="#06b6d4" />
+              </svg>
+              <h1 className="text-xl font-black text-cyan-400">NEUROEASE</h1>
+            </div>
+            <p className="text-xs text-cyan-300 font-bold text-center">EASE. ELEVATE. EMPOWER</p>
+          </header>
 
-      {/* Main Content */}
-      <main className="flex-1 pb-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          {/* Welcome Section */}
-          <div className="mb-6 mt-6">
-            <h1 className="text-lg font-bold text-white mb-1">
-              Welcome back, {session.guardianName}
-            </h1>
-            <p className="text-xs text-cyan-400">
-              Monitoring {session.patientName}
-            </p>
-          </div>
+          {/* Scrollable Content */}
+          <main className="flex-1 overflow-y-auto px-4 py-4 pb-24">
+            <div className="mb-4">
+              <h2 className="text-sm font-bold text-white mb-1">Welcome back, {session.guardianName}</h2>
+              <p className="text-xs text-cyan-400">Monitoring {session.patientName}</p>
+            </div>
 
-          {/* Violet's Status */}
-          <div className="mb-6">
-            <VioletStatusCard 
-              status="rising" 
-              stressScore={62} 
-              heartRate={92} 
-              lastUpdate="Just now"
-              stressChange="rising"
-              heartRateChange="rising"
-            />
-          </div>
+            <div className="mb-4">
+              <VioletStatusCard 
+                status="rising" 
+                stressScore={62} 
+                heartRate={92} 
+                lastUpdate="Just now"
+                stressChange="rising"
+                heartRateChange="rising"
+              />
+            </div>
 
-          {/* Connected Devices */}
-          <div className="mb-6">
-            <h3 className="text-sm font-semibold text-white mb-3">Connected Devices</h3>
-            <DeviceStatusCarousel devices={mockDevices} />
-          </div>
+            <div className="mb-4">
+              <h3 className="text-xs font-semibold text-white mb-2">Connected Devices</h3>
+              <DeviceStatusCarousel devices={mockDevices} />
+            </div>
 
-          {/* Alerts & Notifications */}
-          <div className="mb-6">
-            <h3 className="text-sm font-semibold text-white mb-3">Alerts & Notifications</h3>
-            <AlertsPanel alerts={mockAlerts} />
-          </div>
+            <div className="mb-4">
+              <h3 className="text-xs font-semibold text-white mb-2">Alerts</h3>
+              <AlertsPanel alerts={mockAlerts} />
+            </div>
 
-          {/* Emergency Feature */}
-          <div className="bg-red-900/20 border border-red-600/30 rounded-lg p-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-white font-semibold text-sm mb-1">Emergency Mode</h3>
-                <p className="text-gray-400 text-xs">
-                  Activate noise reduction & escape navigation
-                </p>
-              </div>
-              <button type="button" className="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded text-sm transition-colors">
+            <div className="bg-red-900/30 border border-red-600/50 rounded-lg p-3">
+              <h3 className="text-white font-semibold text-xs mb-1">Emergency Mode</h3>
+              <p className="text-gray-400 text-xs mb-2">Activate noise reduction & escape navigation</p>
+              <button type="button" className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold px-3 py-2 rounded text-xs transition-colors">
                 Activate
               </button>
             </div>
-          </div>
+          </main>
+
+          {/* Bottom Navigation */}
+          <nav className="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-cyan-400/30 flex justify-around items-center h-20 max-w-sm mx-auto">
+            <button
+              onClick={() => handleNavigation('home', '/dashboard')}
+              className={`flex flex-col items-center justify-center w-full h-full gap-1 transition-colors ${
+                activeTab === 'home' ? 'text-cyan-400' : 'text-gray-400 hover:text-cyan-400'
+              }`}
+            >
+              <Home size={20} />
+              <span className="text-xs">Home</span>
+            </button>
+            <button
+              onClick={() => handleNavigation('health', '/patient')}
+              className={`flex flex-col items-center justify-center w-full h-full gap-1 transition-colors ${
+                activeTab === 'health' ? 'text-cyan-400' : 'text-gray-400 hover:text-cyan-400'
+              }`}
+            >
+              <Heart size={20} />
+              <span className="text-xs">Health</span>
+            </button>
+            <button
+              onClick={() => handleNavigation('devices', '/devices')}
+              className={`flex flex-col items-center justify-center w-full h-full gap-1 transition-colors ${
+                activeTab === 'devices' ? 'text-cyan-400' : 'text-gray-400 hover:text-cyan-400'
+              }`}
+            >
+              <Smartphone size={20} />
+              <span className="text-xs">Devices</span>
+            </button>
+            <button
+              onClick={() => handleNavigation('care', '/care-circle')}
+              className={`flex flex-col items-center justify-center w-full h-full gap-1 transition-colors ${
+                activeTab === 'care' ? 'text-cyan-400' : 'text-gray-400 hover:text-cyan-400'
+              }`}
+            >
+              <Users size={20} />
+              <span className="text-xs">Care</span>
+            </button>
+            <button
+              onClick={() => handleNavigation('settings', '/community')}
+              className={`flex flex-col items-center justify-center w-full h-full gap-1 transition-colors ${
+                activeTab === 'settings' ? 'text-cyan-400' : 'text-gray-400 hover:text-cyan-400'
+              }`}
+            >
+              <Settings size={20} />
+              <span className="text-xs">More</span>
+            </button>
+          </nav>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

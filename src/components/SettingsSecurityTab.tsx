@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Lock, Fingerprint, Key, Activity, AlertCircle } from 'lucide-react';
+import { Lock, Fingerprint, Key, AlertCircle } from 'lucide-react';
 
 export function SettingsSecurityTab() {
   const [twoFAEnabled, setTwoFAEnabled] = useState(false);
@@ -87,7 +87,7 @@ export function SettingsSecurityTab() {
           <div>
             <div className="flex items-center justify-between mb-4">
               <label className="text-gray-300 font-semibold flex items-center gap-2">
-                <Activity size={18} /> Login Activity
+                <Lock size={18} /> Login Activity
               </label>
               <button type="button"
                 onClick={() => setShowLoginActivity(!showLoginActivity)}

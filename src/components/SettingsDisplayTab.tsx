@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Moon, Sun, Palette } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 
 export function SettingsDisplayTab() {
   const [colorScheme, setColorScheme] = useState('dark');
@@ -23,7 +23,7 @@ export function SettingsDisplayTab() {
           {/* Color Scheme */}
           <div className="pb-6 border-b border-teal-600/20">
             <label className="text-gray-300 font-semibold mb-4 flex items-center gap-2">
-              <Palette size={18} /> Color Scheme
+              <Moon size={18} /> Color Scheme
             </label>
             <div className="grid grid-cols-3 gap-3">
               {[
@@ -54,7 +54,7 @@ export function SettingsDisplayTab() {
           {/* Accent Color */}
           <div>
             <label className="text-gray-300 font-semibold mb-4 flex items-center gap-2">
-              <Palette size={18} /> Accent Color
+              <Sun size={18} /> Accent Color
             </label>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {accentColors.map((color) => (

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { FileText, Shield, FileCheck, Calendar } from 'lucide-react';
+import { FileText, Shield, Calendar } from 'lucide-react';
 
 export function SettingsComplianceTab() {
   const [showHIPAA, setShowHIPAA] = useState(false);
@@ -82,7 +82,7 @@ export function SettingsComplianceTab() {
           <div className="pb-6 border-b border-teal-600/20">
             <div className="flex items-center justify-between mb-4">
               <label className="text-gray-300 font-semibold flex items-center gap-2">
-                <FileCheck size={18} /> Audit Trails
+                <Shield size={18} /> Audit Trails
               </label>
               <button type="button"
                 onClick={() => setShowAuditTrails(!showAuditTrails)}

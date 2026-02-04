@@ -9,8 +9,12 @@ import { initializeAccessibilitySettings } from '@/utils/accessibility';
  */
 export function AccessibilityProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    // Initialize accessibility settings on app load
-    initializeAccessibilitySettings();
+    // Initialize accessibility settings on app load (non-blocking)
+    const timer = setTimeout(() => {
+      initializeAccessibilitySettings();
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return <>{children}</>;

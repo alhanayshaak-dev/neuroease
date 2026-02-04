@@ -90,69 +90,6 @@ export function getVisualModeConfig(mode: VisualModeType): VisualModeConfig {
 }
 
 /**
- * Create custom visual mode
- */
-export async function createCustomVisualMode(
-  patientId: string,
-  modeName: string,
-  visionMode: VisualModeType,
-  config: Partial<VisualModeConfig>
-): Promise<Mode> {
-  const supabase = getSupabase();
-  const defaultConfig = DEFAULT_VISUAL_MODES[visionMode];
-  const mergedConfig = { ...defaultConfig, ...config };
-
-  const { data, error } = await supabase
-    .from('modes')
-    .insert({
-      patient_id: patientId,
-      mode_name: modeName,
-      neurolens_vision_mode: visionMode,
-      neurolens_cues: mergedConfig.cuesEnabled,
-      neuroband_sensitivity: 'normal',
-      neuroband_haptics_intensity: 50,
-      neurobud_noise_reduction: 'low',
-      neurobud_social_cues: false,
-    })
-    .select()
-    .single();
-
-  if (error) {
-    throw new Error(`Failed to create custom visual mode: ${error.message}`);
-  }
-
-  return data;
-}
-
-/**
- * Update visual mode configuration
- */
-export async function updateVisualModeConfig(
-  modeId: string,
-  config: Partial<VisualModeConfig>
-): Promise<Mode> {
-  const supabase = getSupabase();
-
-  const updates: any = {};
-  if (config.cuesEnabled !== undefined) {
-    updates.neurolens_cues = config.cuesEnabled;
-  }
-
-  const { data, error } = await supabase
-    .from('modes')
-    .update(updates)
-    .eq('id', modeId)
-    .select()
-    .single();
-
-  if (error) {
-    throw new Error(`Failed to update visual mode: ${error.message}`);
-  }
-
-  return data;
-}
-
-/**
  * Apply visual mode to UI
  * Returns CSS variables for styling
  */
@@ -247,41 +184,4 @@ export function validateVisualModeConfig(config: Partial<VisualModeConfig>): {
     valid: errors.length === 0,
     errors,
   };
-}
-
-/**
- * Get all visual modes for a patient
- */
-export async function getPatientVisualModes(patientId: string): Promise<Mode[]> {
-  const supabase = getSupabase();
-  const { data, error } = await supabase
-    .from('modes')
-    .select('*')
-    .eq('patient_id', patientId)
-    .order('created_at', { ascending: true });
-
-  if (error) {
-    throw new Error(`Failed to fetch visual modes: ${error.message}`);
-  }
-
-  return data || [];
-}
-
-/**
- * Toggle visual cues for a mode
- */
-export async function toggleVisualCues(modeId: string, enabled: boolean): Promise<Mode> {
-  const supabase = getSupabase();
-  const { data, error } = await supabase
-    .from('modes')
-    .update({ neurolens_cues: enabled })
-    .eq('id', modeId)
-    .select()
-    .single();
-
-  if (error) {
-    throw new Error(`Failed to toggle visual cues: ${error.message}`);
-  }
-
-  return data;
 }

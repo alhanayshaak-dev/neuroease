@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { User, Mail, Phone, MapPin, Briefcase, Edit2, Save, XCircle, LogOut } from 'lucide-react';
+import { User, Mail, Phone, MapPin, Edit2, Save, XCircle, LogOut } from 'lucide-react';
 
 interface PersonalTabProps {
   onLogout?: () => void;
@@ -105,7 +105,7 @@ export function SettingsPersonalTab({ onLogout }: PersonalTabProps) {
 
           <div>
             <label className="text-gray-400 text-sm block mb-2 flex items-center gap-2">
-              <Briefcase size={16} /> Relationship to Violet
+              <User size={16} /> Relationship to Violet
             </label>
             {isEditing ? (
               <select

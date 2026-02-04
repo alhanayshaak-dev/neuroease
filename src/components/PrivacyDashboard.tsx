@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Toggle, Download, Trash2, Info } from 'lucide-react';
+import { Download, Trash2, Info } from 'lucide-react';
 import {
   getDefaultAIAccessSettings,
   formatDataRetentionDays,

@@ -39,12 +39,6 @@ export interface RefillReminder {
   daysRemaining: number;
 }
 
-export interface PrivacyControl {
-  id: string;
-  guardian: string;
-  permission: string;
-}
-
 export interface AccessLog {
   id: string;
   guardian: string;
@@ -200,52 +194,6 @@ export function checkDrugInteractions(medications: string[]): string[] {
   });
 
   return warnings;
-}
-
-export function generatePrivacyControls(): PrivacyControl[] {
-  return [
-    {
-      id: 'perm-1',
-      guardian: 'Avery Gray (Mother)',
-      permission: 'All except mic/camera',
-    },
-    {
-      id: 'perm-2',
-      guardian: 'Kai Azer (Father)',
-      permission: 'Status, Alerts, Trends',
-    },
-    {
-      id: 'perm-3',
-      guardian: 'Sophie Falcone (Therapist)',
-      permission: 'Trends, Medical, Strategies',
-    },
-  ];
-}
-
-export function generateAccessLogs(): AccessLog[] {
-  return [
-    {
-      id: 'log-1',
-      guardian: 'Avery Gray',
-      timestamp: 'Today, 3:00 PM',
-      dataAccessed: 'Medical files, Medications',
-      duration: '5 minutes',
-    },
-    {
-      id: 'log-2',
-      guardian: 'Sophie Falcone',
-      timestamp: 'Today, 1:30 PM',
-      dataAccessed: 'Trigger patterns, Strategy effectiveness',
-      duration: '10 minutes',
-    },
-    {
-      id: 'log-3',
-      guardian: 'Kai Azer',
-      timestamp: 'Yesterday, 6:00 PM',
-      dataAccessed: 'Status, Alerts',
-      duration: '3 minutes',
-    },
-  ];
 }
 
 export function generateLearningResources(): LearningResource[] {
