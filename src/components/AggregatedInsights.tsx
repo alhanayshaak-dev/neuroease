@@ -1,5 +1,6 @@
 'use client';
 
+// Component for displaying aggregated patient insights
 import {
   BarChart,
   Bar,
