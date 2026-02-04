@@ -263,11 +263,3 @@ export type CopingStrategy = Database['public']['Tables']['coping_strategies']['
 export type Mode = Database['public']['Tables']['modes']['Row'];
 export type CareCircleMessage = Database['public']['Tables']['care_circle_messages']['Row'];
 export type CommunityStrategy = Database['public']['Tables']['community_strategies']['Row'];
-
-// Export commonly used types for convenience
-export type Device = Database['public']['Tables']['devices']['Row'];
-export type SensorData = Database['public']['Tables']['sensor_data']['Row'];
-export type Patient = Database['public']['Tables']['patients']['Row'];
-export type Guardian = Database['public']['Tables']['guardians']['Row'];
-export type CopingStrategy = Database['public']['Tables']['coping_strategies']['Row'];
-export type CommunityStrategy = Database['public']['Tables']['community_strategies']['Row'];
