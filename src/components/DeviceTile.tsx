@@ -8,7 +8,6 @@ import {
   Wifi,
   WifiOff,
   AlertCircle,
-  Smartphone,
 } from 'lucide-react';
 import { Device } from '@/types/database';
 import { getConnectionStatus, formatBatteryLevel, formatLastSync } from '@/utils/devices';
