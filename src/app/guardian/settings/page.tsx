@@ -10,7 +10,6 @@ import {
   Volume2,
   Smartphone,
   Moon,
-  Sun,
   Globe,
   Database,
   Shield,
