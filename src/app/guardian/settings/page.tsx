@@ -1,6 +1,6 @@
 'use client';
 
-// Guardian settings page for managing user preferences
+// Guardian settings page for managing user preferences and display options
 import React, { useState } from 'react';
 import { GuardianLayout } from '@/components/GuardianLayout';
 import {
