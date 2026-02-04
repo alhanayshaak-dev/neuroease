@@ -244,7 +244,7 @@ export function AnalyticsDashboard({
                   outerRadius={80}
                   label
                 >
-                  {trends.trigger_frequencies.map((entry, index) => (
+                  {trends.trigger_frequencies.map((_, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
