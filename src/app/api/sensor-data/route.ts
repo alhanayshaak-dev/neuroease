@@ -107,7 +107,7 @@ function validateSensorData(data: unknown): data is SensorDataRequest {
 }
 
 /**
- * Get patient baseline metrics
+ * Get patient baseline metrics from database
  */
 async function getPatientBaseline(patientId: string): Promise<BaselineMetrics | null> {
   try {
