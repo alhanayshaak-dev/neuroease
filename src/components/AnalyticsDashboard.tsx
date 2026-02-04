@@ -1,7 +1,7 @@
 'use client';
 
 // Analytics dashboard component for displaying metrics
-import React, { useState } from 'react';
+import React from 'react';
 import {
   LineChart,
   Line,
