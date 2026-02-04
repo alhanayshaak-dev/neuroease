@@ -75,7 +75,7 @@ const mockProducts = [
   },
 ];
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     return NextResponse.json({
       success: true,
