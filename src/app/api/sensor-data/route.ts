@@ -5,6 +5,8 @@
  * predicts overload, stores in database, and publishes via Supabase Realtime.
  *
  * **Validates: Requirements 1.1, 2.1, 3.1**
+ * 
+ * This endpoint processes incoming sensor metrics from connected wearable devices.
  */
 
 import { NextRequest, NextResponse } from 'next/server';
