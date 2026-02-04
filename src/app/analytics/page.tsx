@@ -8,6 +8,7 @@ import { AnalyticsTrends } from '@/utils/analytics';
 type TimePeriod = 'day' | 'week' | 'month';
 
 // Analytics page for viewing stress patterns and trends
+// Fixed: Calendar import removed to resolve build error
 
 export default function AnalyticsPage() {
   const { user } = useAuth();
