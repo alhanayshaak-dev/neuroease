@@ -19,7 +19,7 @@ interface DeviceTileProps {
   onRemove?: () => void;
 }
 
-export function DeviceTile({ device, onSettings, onRemove }: DeviceTileProps) {
+export function DeviceTile({ device, _onSettings, _onRemove }: DeviceTileProps) {
   const batteryPercentage = device.battery_level;
   const isConnected = device.is_connected;
   const hasDamage = Object.keys(device.damage_state || {}).length > 0;
@@ -138,17 +138,17 @@ export function DeviceTile({ device, onSettings, onRemove }: DeviceTileProps) {
 
       {/* Action buttons */}
       <div className="flex gap-2">
-        {onSettings && (
+        {_onSettings && (
           <button type="button"
-            onClick={onSettings}
+            onClick={_onSettings}
             className="flex-1 px-3 py-2 bg-neutral-800 hover:bg-neutral-700 text-neutral-100 rounded text-sm font-medium transition-colors"
           >
             Settings
           </button>
         )}
-        {onRemove && (
+        {_onRemove && (
           <button type="button"
-            onClick={onRemove}
+            onClick={_onRemove}
             className="flex-1 px-3 py-2 bg-red-900 hover:bg-red-800 text-red-100 rounded text-sm font-medium transition-colors"
           >
             Remove
