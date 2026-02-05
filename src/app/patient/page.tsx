@@ -23,9 +23,17 @@ export default function PatientPage() {
   const [isEditing, setIsEditing] = useState(false);
   const [editData, setEditData] = useState<Partial<Patient>>({});
 
-  useEffect(() => {
-    loadPatientData();
-  }, [loadPatientData]);
+  const loadMedicalFiles = async () => {
+    try {
+      const response = await fetch('/api/patient/medical-files');
+      if (response.ok) {
+        const data = await response.json();
+        setMedicalFiles(data);
+      }
+    } catch (error) {
+      console.error('Failed to load medical files:', error);
+    }
+  };
 
   const loadPatientData = async () => {
     try {
@@ -45,17 +53,9 @@ export default function PatientPage() {
     }
   };
 
-  const loadMedicalFiles = async () => {
-    try {
-      const response = await fetch('/api/patient/medical-files');
-      if (response.ok) {
-        const data = await response.json();
-        setMedicalFiles(data);
-      }
-    } catch (error) {
-      console.error('Failed to load medical files:', error);
-    }
-  };
+  useEffect(() => {
+    loadPatientData();
+  }, []);
 
   const handleSaveProfile = async () => {
     try {

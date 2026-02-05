@@ -36,9 +36,28 @@ export function CaregiverDashboard({ patientId }: CaregiverDashboardProps) {
     },
   });
 
+  const loadPatientData = async () => {
+    try {
+      setIsLoading(true);
+      const response = await fetch(`/api/patients/${patientId}`);
+      if (response.ok) {
+        const data = await response.json();
+        setPatient({
+          ...data,
+          currentStatus: 'calm',
+          currentStressScore: 0,
+        });
+      }
+    } catch (error) {
+      console.error('Failed to load patient data:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   useEffect(() => {
     loadPatientData();
-  }, [patientId, loadPatientData]);
+  }, [patientId]);
 
   useEffect(() => {
     if (latestSensorData) {
@@ -67,25 +86,6 @@ export function CaregiverDashboard({ patientId }: CaregiverDashboardProps) {
       setEvents((prev) => [latestSensorData, ...prev].slice(0, 20));
     }
   }, [latestSensorData]);
-
-  const loadPatientData = async () => {
-    try {
-      setIsLoading(true);
-      const response = await fetch(`/api/patients/${patientId}`);
-      if (response.ok) {
-        const data = await response.json();
-        setPatient({
-          ...data,
-          currentStatus: 'calm',
-          currentStressScore: 0,
-        });
-      }
-    } catch (error) {
-      console.error('Failed to load patient data:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const getStatusColor = (status?: string) => {
     switch (status) {

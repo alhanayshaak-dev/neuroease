@@ -25,10 +25,6 @@ export default function CommunityPage() {
   ];
   const ageGroups: AgeGroup[] = ['child', 'teen', 'adult', 'all'];
 
-  useEffect(() => {
-    fetchStrategies();
-  }, [searchTerm, selectedAgeGroup, selectedCategory, sortBy, fetchStrategies]);
-
   const fetchStrategies = async () => {
     try {
       setLoading(true);
@@ -61,6 +57,10 @@ export default function CommunityPage() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchStrategies();
+  }, [searchTerm, selectedAgeGroup, selectedCategory, sortBy]);
 
   const handleRate = async (strategyId: string, rating: number) => {
     try {
@@ -224,4 +224,3 @@ export default function CommunityPage() {
     </AppLayout>
   );
 }
-
