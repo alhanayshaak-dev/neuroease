@@ -62,6 +62,7 @@ export function validateGestureConfig(
 
 /**
  * Execute a gesture action
+ * Build cache invalidation v4
  */
 export function executeGestureAction(
   action: string,
