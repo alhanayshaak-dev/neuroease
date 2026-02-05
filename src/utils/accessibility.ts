@@ -41,7 +41,7 @@ export function getAccessibilitySettings(): AccessibilitySettings {
       };
     }
   } catch (error) {
-    console.error('Failed to parse accessibility settings:', error);
+    // Silently fail on parse
   }
 
   return DEFAULT_SETTINGS;
@@ -64,7 +64,7 @@ export function setAccessibilitySettings(
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
   } catch (error) {
-    console.error('Failed to save accessibility settings:', error);
+    // Silently fail on save
   }
 
   // Apply settings to DOM immediately
@@ -161,7 +161,7 @@ export function resetAccessibilitySettings(): AccessibilitySettings {
   try {
     localStorage.removeItem(STORAGE_KEY);
   } catch (error) {
-    console.error('Failed to reset accessibility settings:', error);
+    // Silently fail on reset
   }
 
   applyAccessibilitySettings(DEFAULT_SETTINGS);

@@ -41,7 +41,6 @@ export async function GET() {
 
     return NextResponse.json(medications, { status: 200 });
   } catch (error) {
-    console.error('Error fetching medications:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
@@ -98,7 +97,6 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(newMedication, { status: 201 });
   } catch (error) {
-    console.error('Error creating medication:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

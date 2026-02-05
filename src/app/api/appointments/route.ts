@@ -41,7 +41,6 @@ export async function GET() {
 
     return NextResponse.json(appointments, { status: 200 });
   } catch (error) {
-    console.error('Error fetching appointments:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
@@ -108,7 +107,6 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(newAppointment, { status: 201 });
   } catch (error) {
-    console.error('Error creating appointment:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

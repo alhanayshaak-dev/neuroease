@@ -29,7 +29,7 @@ export function useAccessibility() {
         try {
           setSettings(JSON.parse(e.newValue));
         } catch (error) {
-          console.error('Failed to parse storage change:', error);
+          // Silently fail on parse
         }
       }
     };

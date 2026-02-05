@@ -67,7 +67,6 @@ export async function POST(request: NextRequest, { params }: { params: { id: str
 
     return NextResponse.json(updatedMedication, { status: 200 });
   } catch (error) {
-    console.error('Error logging medication:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

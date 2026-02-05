@@ -119,7 +119,6 @@ async function getPatientBaseline(patientId: string): Promise<BaselineMetrics | 
       .single();
 
     if (error) {
-      console.error('Error fetching patient baseline:', error);
       return null;
     }
 
@@ -134,7 +133,6 @@ async function getPatientBaseline(patientId: string): Promise<BaselineMetrics | 
       baseline_eda: patientData.baseline_eda || 10,
     };
   } catch (error) {
-    console.error('Error getting patient baseline:', error);
     return null;
   }
 }
@@ -156,13 +154,11 @@ async function getRecentSensorData(
       .limit(limit);
 
     if (error) {
-      console.error('Error fetching recent sensor data:', error);
       return [];
     }
 
     return data || [];
   } catch (error) {
-    console.error('Error getting recent sensor data:', error);
     return [];
   }
 }
@@ -200,13 +196,11 @@ async function storeSensorData(
       .single();
 
     if (error) {
-      console.error('Error storing sensor data:', error);
       return null;
     }
 
     return insertedData?.id || null;
   } catch (error) {
-    console.error('Error storing sensor data:', error);
     return null;
   }
 }
@@ -224,11 +218,8 @@ async function publishSensorData(
     // Supabase Realtime automatically publishes changes to subscribed clients
     // when data is inserted/updated. This is handled by the database trigger.
     // We just need to ensure the data was stored successfully.
-    console.log(
-      `Sensor data published for patient ${patientId}: stress_score=${stressScore}, overload_predicted=${overloadPredicted}`
-    );
   } catch (error) {
-    console.error('Error publishing sensor data:', error);
+    // Silently fail on publish errors
   }
 }
 
@@ -304,7 +295,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         overloadPredictedInMinutes = prediction.timeToOverloadMinutes;
       }
     } catch (error) {
-      console.error('Error predicting overload:', error);
       // Continue without prediction if AI fails
     }
 
@@ -348,7 +338,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       { status: 201 }
     );
   } catch (error) {
-    console.error('Error processing sensor data:', error);
     return NextResponse.json(
       {
         error: 'Internal server error',

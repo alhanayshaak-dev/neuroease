@@ -73,7 +73,6 @@ export async function callClaude(prompt: string, maxTokens: number = 1024): Prom
     const data = await response.json();
     return data.content[0].text;
   } catch (error) {
-    console.error('Error calling Anthropic API:', error);
     throw error;
   }
 }
@@ -164,7 +163,6 @@ Be conservative - only predict overload if confidence is >60%.`;
     // Parse JSON response
     const jsonMatch = response.match(/\{[\s\S]*\}/);
     if (!jsonMatch) {
-      console.error('Failed to parse Claude response:', response);
       return {
         predicted: false,
         confidence: 0,
@@ -188,7 +186,6 @@ Be conservative - only predict overload if confidence is >60%.`;
 
     return prediction;
   } catch (error) {
-    console.error('Error predicting overload:', error);
     return {
       predicted: false,
       confidence: 0,
@@ -281,7 +278,6 @@ Consider:
     // Parse JSON response
     const jsonMatch = response.match(/\{[\s\S]*\}/);
     if (!jsonMatch) {
-      console.error('Failed to parse Claude response:', response);
       return {
         strategies: [],
         reasoning: 'Failed to parse AI response',
@@ -304,7 +300,6 @@ Consider:
       reasoning: suggestion.reasoning,
     };
   } catch (error) {
-    console.error('Error suggesting strategies:', error);
     return {
       strategies: [],
       reasoning: 'Error generating strategy suggestions',

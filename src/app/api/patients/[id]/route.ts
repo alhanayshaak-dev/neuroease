@@ -48,7 +48,6 @@ export async function GET(_request: any, { params }: { params: { id: string } })
 
     return NextResponse.json(patientData, { status: 200 });
   } catch (error) {
-    console.error('Error fetching patient:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
