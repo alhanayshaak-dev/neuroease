@@ -271,7 +271,7 @@ export default function TherapistPage() {
                       created_at: new Date(Date.now() - 1800000).toISOString(),
                     },
                   ]}
-                  onSendMessage={(message, type) => {
+                  onSendMessage={(_message, _type) => {
                     // Handle message sending
                   }}
                   onClose={() => setShowMessaging(false)}
