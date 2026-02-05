@@ -19,7 +19,7 @@ interface DeviceTileProps {
 }
 
 export function DeviceTile({ device, onSettings: _onSettings, onRemove: _onRemove }: DeviceTileProps) {
-  // Force cache invalidation - build version 2
+  // Build cache invalidation v3 - Force fresh build
   const batteryPercentage = device.battery_level;
   const isConnected = device.is_connected;
   const hasDamage = Object.keys(device.damage_state || {}).length > 0;
