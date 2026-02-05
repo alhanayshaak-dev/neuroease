@@ -1,0 +1,13 @@
+# Vercel ignore file
+.git
+.gitignore
+.env.local
+.env.*.local
+node_modules
+.next
+.swc
+.vscode
+.kiro
+*.md
+!README.md
+!DEPLOYMENT_GUIDE.md
