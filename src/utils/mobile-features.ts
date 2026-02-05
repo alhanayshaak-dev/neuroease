@@ -22,7 +22,7 @@ export function registerPushNotifications(): Promise<string> {
   });
 }
 
-export function sendPushNotification(title: string, message: string): Promise<boolean> {
+export function sendPushNotification(_title: string, _message: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -62,7 +62,7 @@ export function getHomeScreenWidgets(): HomeScreenWidget[] {
   ];
 }
 
-export function addHomeScreenWidget(widget: HomeScreenWidget): Promise<boolean> {
+export function addHomeScreenWidget(_widget: HomeScreenWidget): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -94,7 +94,7 @@ export function authenticateWithBiometric(): Promise<boolean> {
   });
 }
 
-export function shareToNativeApp(data: any, appName: string): Promise<boolean> {
+export function shareToNativeApp(_data: any, _appName: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
