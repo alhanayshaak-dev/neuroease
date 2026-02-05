@@ -65,7 +65,7 @@ export function validateGestureConfig(
  */
 export function executeGestureAction(
   action: string,
-  actionParams: Record<string, unknown>
+  _actionParams: Record<string, unknown>
 ): void {
   switch (action) {
     case 'toggle-emergency':
