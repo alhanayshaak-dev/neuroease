@@ -1,6 +1,5 @@
 import fc from 'fast-check';
 import { predictOverload, shouldDisplayPrediction } from '../anthropic';
-import type { SensorData } from '../../types';
 
 /**
  * Property-Based Tests for Overload Prediction
@@ -42,7 +41,10 @@ describe('Overload Prediction - Property-Based Tests', () => {
         ),
         stress_score: fc.integer({ min: 0, max: 100 }),
         overload_predicted: fc.boolean(),
-        overload_predicted_in_minutes: fc.option(fc.integer({ min: 5, max: 10 })),
+        overload_predicted_in_minutes: fc.oneof(
+          fc.constant(null),
+          fc.integer({ min: 5, max: 10 })
+        ),
         created_at: fc.date().map((d) => d.toISOString()),
       }),
       { minLength: 1, maxLength: 20 }
@@ -86,7 +88,7 @@ describe('Overload Prediction - Property-Based Tests', () => {
     it('should always return confidence between 0 and 100', async () => {
       await fc.assert(
         fc.asyncProperty(sensorDataGenerator(), contextGenerator(), async (sensorData, context) => {
-          const prediction = await predictOverload(sensorData, context);
+          const prediction = await predictOverload(sensorData as any, context as any);
           return prediction.confidence >= 0 && prediction.confidence <= 100;
         }),
         { numRuns: 50 }
@@ -98,7 +100,7 @@ describe('Overload Prediction - Property-Based Tests', () => {
     it('should predict overload 5-10 minutes in advance when predicted is true', async () => {
       await fc.assert(
         fc.asyncProperty(sensorDataGenerator(), contextGenerator(), async (sensorData, context) => {
-          const prediction = await predictOverload(sensorData, context);
+          const prediction = await predictOverload(sensorData as any, context as any);
           if (prediction.predicted && prediction.timeToOverloadMinutes) {
             return prediction.timeToOverloadMinutes >= 5 && prediction.timeToOverloadMinutes <= 10;
           }
@@ -117,7 +119,7 @@ describe('Overload Prediction - Property-Based Tests', () => {
     it('should only display prediction when confidence > 60%', async () => {
       await fc.assert(
         fc.asyncProperty(sensorDataGenerator(), contextGenerator(), async (sensorData, context) => {
-          const prediction = await predictOverload(sensorData, context);
+          const prediction = await predictOverload(sensorData as any, context as any);
           const shouldDisplay = shouldDisplayPrediction(prediction);
 
           // If shouldDisplay is true, confidence must be > 60%
@@ -141,7 +143,7 @@ describe('Overload Prediction - Property-Based Tests', () => {
     it('should return consistent prediction structure with required fields', async () => {
       await fc.assert(
         fc.asyncProperty(sensorDataGenerator(), contextGenerator(), async (sensorData, context) => {
-          const prediction = await predictOverload(sensorData, context);
+          const prediction = await predictOverload(sensorData as any, context as any);
 
           // Verify all required fields exist
           return (
@@ -161,7 +163,7 @@ describe('Overload Prediction - Property-Based Tests', () => {
     it('should record identified triggers in prediction', async () => {
       await fc.assert(
         fc.asyncProperty(sensorDataGenerator(), contextGenerator(), async (sensorData, context) => {
-          const prediction = await predictOverload(sensorData, context);
+          const prediction = await predictOverload(sensorData as any, context as any);
 
           // Triggers should be an array of strings
           return (
@@ -178,7 +180,7 @@ describe('Overload Prediction - Property-Based Tests', () => {
     it('should provide a reason for every prediction', async () => {
       await fc.assert(
         fc.asyncProperty(sensorDataGenerator(), contextGenerator(), async (sensorData, context) => {
-          const prediction = await predictOverload(sensorData, context);
+          const prediction = await predictOverload(sensorData as any, context as any);
 
           // Reason should always be a non-empty string
           return typeof prediction.reason === 'string' && prediction.reason.length > 0;
@@ -220,14 +222,17 @@ describe('Overload Prediction - Property-Based Tests', () => {
               activity: fc.constant('socializing'),
               stress_score: fc.integer({ min: 70, max: 100 }),
               overload_predicted: fc.boolean(),
-              overload_predicted_in_minutes: fc.option(fc.integer({ min: 5, max: 10 })),
+              overload_predicted_in_minutes: fc.oneof(
+                fc.constant(null),
+                fc.integer({ min: 5, max: 10 })
+              ),
               created_at: fc.date().map((d) => d.toISOString()),
             }),
             { minLength: 3, maxLength: 10 }
           ),
           contextGenerator(),
           async (sensorData, context) => {
-            const prediction = await predictOverload(sensorData, context);
+            const prediction = await predictOverload(sensorData as any, context as any);
 
             // High stress data should result in higher confidence
             // (though not guaranteed to predict overload)
@@ -271,14 +276,17 @@ describe('Overload Prediction - Property-Based Tests', () => {
               activity: fc.constant('resting'),
               stress_score: fc.integer({ min: 0, max: 30 }),
               overload_predicted: fc.boolean(),
-              overload_predicted_in_minutes: fc.option(fc.integer({ min: 5, max: 10 })),
+              overload_predicted_in_minutes: fc.oneof(
+                fc.constant(null),
+                fc.integer({ min: 5, max: 10 })
+              ),
               created_at: fc.date().map((d) => d.toISOString()),
             }),
             { minLength: 3, maxLength: 10 }
           ),
           contextGenerator(),
           async (sensorData, context) => {
-            const prediction = await predictOverload(sensorData, context);
+            const prediction = await predictOverload(sensorData as any, context as any);
 
             // Low stress data should result in lower confidence of overload
             // (though not guaranteed)
@@ -294,7 +302,7 @@ describe('Overload Prediction - Property-Based Tests', () => {
     it('should not display predictions with confidence <= 60%', async () => {
       await fc.assert(
         fc.asyncProperty(sensorDataGenerator(), contextGenerator(), async (sensorData, context) => {
-          const prediction = await predictOverload(sensorData, context);
+          const prediction = await predictOverload(sensorData as any, context as any);
 
           // If confidence is 60 or less, shouldDisplayPrediction must be false
           if (prediction.confidence <= 60) {
@@ -341,7 +349,10 @@ describe('Overload Prediction - Property-Based Tests', () => {
                 activity: fc.constant('resting'),
                 stress_score: fc.integer({ min: 20, max: 40 }),
                 overload_predicted: fc.boolean(),
-                overload_predicted_in_minutes: fc.option(fc.integer({ min: 5, max: 10 })),
+                overload_predicted_in_minutes: fc.oneof(
+                  fc.constant(null),
+                  fc.integer({ min: 5, max: 10 })
+                ),
                 created_at: fc.date().map((d) => d.toISOString()),
               }),
               { minLength: 2, maxLength: 5 }
@@ -374,7 +385,10 @@ describe('Overload Prediction - Property-Based Tests', () => {
                 activity: fc.constant('socializing'),
                 stress_score: fc.integer({ min: 70, max: 100 }),
                 overload_predicted: fc.boolean(),
-                overload_predicted_in_minutes: fc.option(fc.integer({ min: 5, max: 10 })),
+                overload_predicted_in_minutes: fc.oneof(
+                  fc.constant(null),
+                  fc.integer({ min: 5, max: 10 })
+                ),
                 created_at: fc.date().map((d) => d.toISOString()),
               }),
               { minLength: 2, maxLength: 5 }
@@ -412,7 +426,7 @@ describe('Overload Prediction - Property-Based Tests', () => {
     it('should handle various context combinations', async () => {
       await fc.assert(
         fc.asyncProperty(sensorDataGenerator(), contextGenerator(), async (sensorData, context) => {
-          const prediction = await predictOverload(sensorData, context);
+          const prediction = await predictOverload(sensorData as any, context as any);
 
           // Should always return valid prediction regardless of context
           return (
@@ -429,3 +443,5 @@ describe('Overload Prediction - Property-Based Tests', () => {
     });
   });
 });
+
+

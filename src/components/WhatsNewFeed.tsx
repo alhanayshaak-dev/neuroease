@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Sparkles, Bell, Zap, Target } from 'lucide-react';
 
 export interface FeatureUpdate {

@@ -91,7 +91,7 @@ describe('useRealtimeSubscription', () => {
       const onData = jest.fn();
       let capturedCallback: any;
 
-      mockChannel.on.mockImplementation((event: string, config: any, callback: any) => {
+      mockChannel.on.mockImplementation((event: string, _config: any, callback: any) => {
         if (event === 'postgres_changes') {
           capturedCallback = callback;
         }
@@ -121,7 +121,7 @@ describe('useRealtimeSubscription', () => {
     it('should handle INSERT events', async () => {
       const onData = jest.fn();
 
-      mockChannel.on.mockImplementation((event: string, config: any, callback: any) => {
+      mockChannel.on.mockImplementation((event: string, config: any, _callback: any) => {
         if (event === 'postgres_changes') {
           expect(config.event).toBe('INSERT');
         }
@@ -144,7 +144,7 @@ describe('useRealtimeSubscription', () => {
     it('should handle UPDATE events', async () => {
       const onData = jest.fn();
 
-      mockChannel.on.mockImplementation((event: string, config: any, callback: any) => {
+      mockChannel.on.mockImplementation((event: string, config: any, _callback: any) => {
         if (event === 'postgres_changes') {
           expect(config.event).toBe('UPDATE');
         }
@@ -167,7 +167,7 @@ describe('useRealtimeSubscription', () => {
     it('should handle DELETE events', async () => {
       const onData = jest.fn();
 
-      mockChannel.on.mockImplementation((event: string, config: any, callback: any) => {
+      mockChannel.on.mockImplementation((event: string, config: any, _callback: any) => {
         if (event === 'postgres_changes') {
           expect(config.event).toBe('DELETE');
         }
@@ -190,7 +190,7 @@ describe('useRealtimeSubscription', () => {
     it('should handle multiple events', async () => {
       const onData = jest.fn();
 
-      mockChannel.on.mockImplementation((event: string, config: any, callback: any) => {
+      mockChannel.on.mockImplementation((event: string, config: any, _callback: any) => {
         if (event === 'postgres_changes') {
           expect(config.event).toBe('INSERT,UPDATE,DELETE');
         }
@@ -320,7 +320,7 @@ describe('useRealtimeSubscription', () => {
     it('should track connection state changes', async () => {
       let systemCallback: any;
 
-      mockChannel.on.mockImplementation((event: string, config: any, callback: any) => {
+      mockChannel.on.mockImplementation((event: string, _config: any, callback: any) => {
         if (event === 'system') {
           systemCallback = callback;
         }
@@ -369,7 +369,7 @@ describe('useRealtimeSubscription', () => {
 
   describe('filter handling', () => {
     it('should apply filter to subscription', async () => {
-      mockChannel.on.mockImplementation((event: string, config: any, callback: any) => {
+      mockChannel.on.mockImplementation((event: string, config: any, _callback: any) => {
         if (event === 'postgres_changes') {
           expect(config.filter).toBe('patient_id=eq.patient-123');
         }
@@ -389,7 +389,7 @@ describe('useRealtimeSubscription', () => {
     });
 
     it('should handle subscriptions without filter', async () => {
-      mockChannel.on.mockImplementation((event: string, config: any, callback: any) => {
+      mockChannel.on.mockImplementation((event: string, config: any, _callback: any) => {
         if (event === 'postgres_changes') {
           expect(config.filter).toBeUndefined();
         }

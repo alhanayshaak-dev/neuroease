@@ -157,7 +157,6 @@ describe('Header Component', () => {
       const { container } = render(<Header />);
       const buttons = container.querySelectorAll('button');
       buttons.forEach((button) => {
-        const styles = window.getComputedStyle(button);
         // Buttons should have padding to meet 48x48px minimum
         expect(button).toHaveClass('p-2');
       });

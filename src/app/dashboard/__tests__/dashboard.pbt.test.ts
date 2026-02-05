@@ -1,6 +1,5 @@
 import fc from 'fast-check';
 import { calculateStressScore, getStressStatus } from '@/utils/stress';
-import type { SensorData, Device } from '@/types';
 
 /**
  * Property-Based Test for Dashboard Display Completeness
@@ -376,7 +375,7 @@ describe('Dashboard Display Completeness - Property Tests', () => {
    */
   it('should display dashboard structure even with minimal data', () => {
     fc.assert(
-      fc.property(fc.integer({ min: 0, max: 100 }), baselineArbitrary, (stressScore, baseline) => {
+      fc.property(fc.integer({ min: 0, max: 100 }), baselineArbitrary, (stressScore, _baseline) => {
         // Status section must display with just a score
         const status = getStressStatus(stressScore, 50);
         expect(['calm', 'rising', 'overload']).toContain(status);

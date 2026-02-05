@@ -191,7 +191,7 @@ describe('MainContent Component', () => {
     });
 
     it('should be accessible with screen readers', () => {
-      const { container } = render(
+      render(
         <MainContent>
           <h1>Page Title</h1>
           <p>Page content</p>

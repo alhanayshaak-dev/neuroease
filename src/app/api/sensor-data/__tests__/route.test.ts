@@ -44,7 +44,7 @@ describe('Sensor Data Validation', () => {
         heart_rate: 80,
         hrv: 50,
         eda: 10,
-      };
+      } as Record<string, unknown>;
 
       expect(invalidData.patient_id).toBeUndefined();
     });
@@ -129,7 +129,7 @@ describe('Sensor Data Validation', () => {
         heart_rate: 80,
         hrv: 50,
         eda: 10,
-      };
+      } as Record<string, unknown>;
 
       expect(validData.accelerometer_x).toBeUndefined();
       expect(validData.location).toBeUndefined();
@@ -377,7 +377,7 @@ describe('Error Handling', () => {
     const invalidData = {
       patient_id: 'patient-123',
       // Missing device_id, timestamp, heart_rate, hrv, eda
-    };
+    } as Record<string, unknown>;
 
     expect(invalidData.device_id).toBeUndefined();
   });

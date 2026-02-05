@@ -13,7 +13,7 @@ import {
   Line,
 } from 'recharts';
 import { MapPin, Clock, AlertCircle } from 'lucide-react';
-import type { SensorDataRow } from '@/types/database';
+import type { SensorData } from '@/types/database';
 import {
   calculateStressByLocation,
   calculateHardestTimes,
@@ -21,7 +21,7 @@ import {
 } from '@/utils/analytics';
 
 interface PatientHealthOverviewProps {
-  sensorData: SensorDataRow[];
+  sensorData: SensorData[];
   timeRange?: 'week' | 'month';
 }
 

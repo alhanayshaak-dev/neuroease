@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Moon, Sun } from 'lucide-react';
+import { Moon, Sun, Palette } from 'lucide-react';
 
 export function SettingsDisplayTab() {
   const [colorScheme, setColorScheme] = useState('dark');

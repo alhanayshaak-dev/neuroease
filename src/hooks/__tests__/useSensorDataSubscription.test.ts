@@ -1,4 +1,4 @@
-import { renderHook, waitFor } from '@testing-library/react';
+import { renderHook } from '@testing-library/react';
 import { useSensorDataSubscription } from '../useSensorDataSubscription';
 import * as useRealtimeSubscriptionModule from '../useRealtimeSubscription';
 

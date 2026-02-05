@@ -186,35 +186,35 @@ describe('Navigation Component', () => {
 
   describe('Icon Display', () => {
     it('should display Dashboard icon', () => {
-      const { container } = render(<Navigation />);
+      render(<Navigation />);
       const dashboardLink = screen.getByLabelText('Dashboard').closest('a');
       const icon = dashboardLink?.querySelector('svg');
       expect(icon).toBeInTheDocument();
     });
 
     it('should display CareCircle icon', () => {
-      const { container } = render(<Navigation />);
+      render(<Navigation />);
       const careCircleLink = screen.getByLabelText('CareCircle').closest('a');
       const icon = careCircleLink?.querySelector('svg');
       expect(icon).toBeInTheDocument();
     });
 
     it('should display Patient icon', () => {
-      const { container } = render(<Navigation />);
+      render(<Navigation />);
       const patientLink = screen.getByLabelText('Patient').closest('a');
       const icon = patientLink?.querySelector('svg');
       expect(icon).toBeInTheDocument();
     });
 
     it('should display Devices icon', () => {
-      const { container } = render(<Navigation />);
+      render(<Navigation />);
       const devicesLink = screen.getByLabelText('Devices').closest('a');
       const icon = devicesLink?.querySelector('svg');
       expect(icon).toBeInTheDocument();
     });
 
     it('should display Community icon', () => {
-      const { container } = render(<Navigation />);
+      render(<Navigation />);
       const communityLink = screen.getByLabelText('Community').closest('a');
       const icon = communityLink?.querySelector('svg');
       expect(icon).toBeInTheDocument();

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Activity, AlertCircle } from 'lucide-react';
+import { AlertCircle } from 'lucide-react';
 
 interface VioletStatusCardProps {
   status: 'calm' | 'rising' | 'overload';

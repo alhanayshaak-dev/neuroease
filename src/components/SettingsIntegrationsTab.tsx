@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Zap, Store, CheckCircle2 } from 'lucide-react';
+import { Zap, Store } from 'lucide-react';
 
 export function SettingsIntegrationsTab() {
   const [showConnectedApps, setShowConnectedApps] = useState(false);

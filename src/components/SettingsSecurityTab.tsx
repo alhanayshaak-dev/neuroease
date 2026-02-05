@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Lock, Fingerprint, Key, AlertCircle } from 'lucide-react';
+import { Lock, Fingerprint, Key } from 'lucide-react';
 
 export function SettingsSecurityTab() {
   const [twoFAEnabled, setTwoFAEnabled] = useState(false);

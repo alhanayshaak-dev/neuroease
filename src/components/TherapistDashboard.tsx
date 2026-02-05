@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { AlertCircle, TrendingDown, TrendingUp, Users, Activity, Target } from 'lucide-react';
+import { AlertCircle, TrendingDown, TrendingUp, Users, Activity } from 'lucide-react';
 import {
   calculatePatientInsights,
   calculateAggregatedInsights,

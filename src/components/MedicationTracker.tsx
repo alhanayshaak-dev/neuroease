@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Plus, Check, X } from 'lucide-react';
+import { Plus, Check } from 'lucide-react';
 import {
   calculateAdherenceRate,
   getAdherenceStatus,
@@ -20,7 +20,7 @@ interface MedicationTrackerProps {
 }
 
 export function MedicationTracker({
-  patientId,
+  patientId: _patientId,
   medications = [],
   onAddMedication,
   onLogDose,

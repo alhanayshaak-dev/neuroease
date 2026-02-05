@@ -39,3 +39,22 @@ export function formatLastSync(lastSync: string): string {
   }
   return `${diffDays}d ago`;
 }
+
+/**
+ * Get connection status for display
+ */
+export function getConnectionStatus(device: Device | boolean): string {
+  if (typeof device === 'boolean') {
+    return device ? 'Connected' : 'Disconnected';
+  }
+  
+  if (!device.is_connected) {
+    return 'disconnected';
+  }
+  
+  if (device.battery_level < 20) {
+    return 'low_battery';
+  }
+  
+  return 'connected';
+}

@@ -27,7 +27,7 @@ interface TherapistMessagingProps {
 export function TherapistMessaging({
   patientId,
   patientName,
-  therapistName,
+  therapistName: _therapistName,
   messages = [],
   onSendMessage,
   onClose,

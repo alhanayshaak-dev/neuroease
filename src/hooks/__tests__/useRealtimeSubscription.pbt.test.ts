@@ -1,5 +1,5 @@
 import fc from 'fast-check';
-import { renderHook, waitFor } from '@testing-library/react';
+import { renderHook } from '@testing-library/react';
 import { useRealtimeSubscription } from '../useRealtimeSubscription';
 import { supabase } from '@/lib/supabase';
 
@@ -48,13 +48,13 @@ describe('useRealtimeSubscription - Property-Based Tests', () => {
             let updateReceived = false;
             let updateTime = 0;
 
-            const onData = jest.fn((payload) => {
+            const onData = jest.fn((_payload) => {
               updateReceived = true;
               updateTime = Date.now() - startTime;
             });
 
             let capturedCallback: any;
-            mockChannel.on.mockImplementation((event: string, config: any, callback: any) => {
+            mockChannel.on.mockImplementation((event: string, _config: any, callback: any) => {
               if (event === 'postgres_changes') {
                 capturedCallback = callback;
               }
@@ -111,13 +111,13 @@ describe('useRealtimeSubscription - Property-Based Tests', () => {
             let updateReceived = false;
             let updateTime = 0;
 
-            const onData = jest.fn((payload) => {
+            const onData = jest.fn((_payload) => {
               updateReceived = true;
               updateTime = Date.now() - startTime;
             });
 
             let capturedCallback: any;
-            mockChannel.on.mockImplementation((event: string, config: any, callback: any) => {
+            mockChannel.on.mockImplementation((event: string, _config: any, callback: any) => {
               if (event === 'postgres_changes') {
                 capturedCallback = callback;
               }
@@ -173,13 +173,13 @@ describe('useRealtimeSubscription - Property-Based Tests', () => {
             let updateReceived = false;
             let updateTime = 0;
 
-            const onData = jest.fn((payload) => {
+            const onData = jest.fn((_payload) => {
               updateReceived = true;
               updateTime = Date.now() - startTime;
             });
 
             let capturedCallback: any;
-            mockChannel.on.mockImplementation((event: string, config: any, callback: any) => {
+            mockChannel.on.mockImplementation((event: string, _config: any, callback: any) => {
               if (event === 'postgres_changes') {
                 capturedCallback = callback;
               }
@@ -235,12 +235,12 @@ describe('useRealtimeSubscription - Property-Based Tests', () => {
             const startTime = Date.now();
             const updateTimes: number[] = [];
 
-            const onData = jest.fn((payload) => {
+            const onData = jest.fn((_payload) => {
               updateTimes.push(Date.now() - startTime);
             });
 
             let capturedCallback: any;
-            mockChannel.on.mockImplementation((event: string, config: any, callback: any) => {
+            mockChannel.on.mockImplementation((event: string, _config: any, callback: any) => {
               if (event === 'postgres_changes') {
                 capturedCallback = callback;
               }
@@ -288,12 +288,12 @@ describe('useRealtimeSubscription - Property-Based Tests', () => {
           const startTime = Date.now();
           const updateTimes: number[] = [];
 
-          const onData = jest.fn((payload) => {
+          const onData = jest.fn((_payload) => {
             updateTimes.push(Date.now() - startTime);
           });
 
           let capturedCallback: any;
-          mockChannel.on.mockImplementation((event: string, config: any, callback: any) => {
+          mockChannel.on.mockImplementation((event: string, _config: any, callback: any) => {
             if (event === 'postgres_changes') {
               capturedCallback = callback;
             }
@@ -345,13 +345,13 @@ describe('useRealtimeSubscription - Property-Based Tests', () => {
             let updateReceived = false;
             let updateTime = 0;
 
-            const onData = jest.fn((payload) => {
+            const onData = jest.fn((_payload) => {
               updateReceived = true;
               updateTime = Date.now() - startTime;
             });
 
             let capturedCallback: any;
-            mockChannel.on.mockImplementation((event: string, config: any, callback: any) => {
+            mockChannel.on.mockImplementation((event: string, _config: any, callback: any) => {
               if (event === 'postgres_changes') {
                 capturedCallback = callback;
               }
@@ -412,7 +412,7 @@ describe('useRealtimeSubscription - Property-Based Tests', () => {
             });
 
             let capturedCallback: any;
-            mockChannel.on.mockImplementation((event: string, config: any, callback: any) => {
+            mockChannel.on.mockImplementation((event: string, _config: any, callback: any) => {
               if (event === 'postgres_changes') {
                 capturedCallback = callback;
               }
