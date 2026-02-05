@@ -71,11 +71,10 @@ export function GestureEditor({
                   {gesture.user_only && <p className="text-xs text-yellow-400 mt-1">User only</p>}
                 </div>
                 {onDeleteGesture && (
-                  <button type="button"
+                  <button
+                    type="button"
                     onClick={() => onDeleteGesture(gesture.id)}
                     className="p-2 hover:bg-red-900 rounded transition-colors"
-                    type="button"
-                    title="Delete gesture"
                     aria-label="Delete gesture"
                   >
                     <Trash2 className="w-5 h-5 text-red-500" />

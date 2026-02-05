@@ -103,11 +103,10 @@ export function DashboardChatbot() {
   return (
     <>
       {/* Chatbot Button */}
-      <button type="button"
+      <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-20 right-4 bg-teal-600 hover:bg-teal-700 text-white rounded-full p-4 shadow-lg transition-all z-40"
-        type="button"
-        title="Open chatbot"
         aria-label="Open chatbot"
       >
         <MessageCircle size={24} />
