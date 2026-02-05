@@ -272,7 +272,7 @@ export default function TherapistPage() {
                     },
                   ]}
                   onSendMessage={(message, type) => {
-                    console.log('Message sent:', message, type);
+                    // Handle message sending
                   }}
                   onClose={() => setShowMessaging(false)}
                 />
