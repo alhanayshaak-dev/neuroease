@@ -209,10 +209,10 @@ async function storeSensorData(
  * Publish sensor data via Supabase Realtime to connected clients
  */
 async function publishSensorData(
-  patientId: string,
+  _patientId: string,
   _sensorDataId: string,
-  stressScore: number,
-  overloadPredicted: boolean
+  _stressScore: number,
+  _overloadPredicted: boolean
 ): Promise<void> {
   try {
     // Supabase Realtime automatically publishes changes to subscribed clients
