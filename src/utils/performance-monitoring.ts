@@ -28,7 +28,7 @@ export class PerformanceMonitor {
   private static alerts: PerformanceAlert[] = [];
   private static errors: ErrorReport[] = [];
 
-  static trackError(error: Error, context?: any): void {
+  static trackError(error: Error, _context?: any): void {
     const report: ErrorReport = {
       id: Math.random().toString(36).substr(2, 9),
       message: error.message,
@@ -105,14 +105,14 @@ export function enableRealUserMonitoring(): void {
   // Real User Monitoring enabled
 }
 
-export function trackPageView(pageName: string): void {
+export function trackPageView(_pageName: string): void {
   // Page view tracked
 }
 
-export function trackUserAction(action: string, details?: any): void {
+export function trackUserAction(_action: string, _details?: any): void {
   // User action tracked
 }
 
-export function setUpAlertThreshold(metric: string, threshold: number): void {
+export function setUpAlertThreshold(_metric: string, _threshold: number): void {
   // Alert threshold set
 }

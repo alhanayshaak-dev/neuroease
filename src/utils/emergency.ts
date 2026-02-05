@@ -108,7 +108,7 @@ export async function activateEmergencyMode(patientId: string): Promise<Emergenc
  */
 export async function sendEmergencyAlertsToGuardians(
   patientId: string,
-  activationId: string
+  _activationId: string
 ): Promise<number> {
   const supabase = getSupabase();
 
@@ -196,7 +196,7 @@ export async function applyMaxNoiseReduction(patientId: string): Promise<boolean
  * @param patientId Patient ID
  * @returns True if escape mode was enabled
  */
-export async function enableEscapeMode(patientId: string): Promise<boolean> {
+export async function enableEscapeMode(_patientId: string): Promise<boolean> {
   // Escape mode is a UI state that:
   // 1. Hides non-essential UI elements
   // 2. Shows large, easy-to-tap buttons for:

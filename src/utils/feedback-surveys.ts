@@ -76,7 +76,7 @@ export function getSurveys(): Survey[] {
   ];
 }
 
-export function submitSurveyResponse(surveyId: string, answers: Record<string, any>): Promise<boolean> {
+export function submitSurveyResponse(_surveyId: string, _answers: Record<string, any>): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -100,7 +100,7 @@ export function calculateNPS(ratings: number[]): NPSData {
   };
 }
 
-export function voteOnFeature(featureId: string, vote: 'up' | 'down'): Promise<boolean> {
+export function voteOnFeature(_featureId: string, _vote: 'up' | 'down'): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -108,7 +108,7 @@ export function voteOnFeature(featureId: string, vote: 'up' | 'down'): Promise<b
   });
 }
 
-export function reportBug(title: string, description: string, screenshot?: string): Promise<Feedback> {
+export function reportBug(title: string, description: string, _screenshot?: string): Promise<Feedback> {
   return submitFeedback('bug', title, description, 1);
 }
 

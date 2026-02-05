@@ -56,7 +56,7 @@ export function analyzeSentiment(text: string): Sentiment {
 }
 
 export function generateContextAwareResponse(
-  userMessage: string,
+  _userMessage: string,
   sentiment: Sentiment,
   language: Language = 'en'
 ): ChatbotResponse {
@@ -94,7 +94,7 @@ export function learnFromInteraction(message: ChatMessage): void {
   localStorage.setItem('chatbot-learned-patterns', JSON.stringify(patterns.slice(-100)));
 }
 
-export function getProactiveSuggestions(stressLevel: number, language: Language = 'en'): string[] {
+export function getProactiveSuggestions(stressLevel: number, _language: Language = 'en'): string[] {
   if (stressLevel > 75) {
     return [
       'Emergency breathing exercise',

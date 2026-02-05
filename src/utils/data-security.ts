@@ -67,12 +67,12 @@ export function enableBiometric(): Promise<boolean> {
   });
 }
 
-export function encryptData(data: string, key: string): string {
+export function encryptData(data: string, _key: string): string {
   // Simple encryption (in production, use proper encryption library)
   return Buffer.from(data).toString('base64');
 }
 
-export function decryptData(encrypted: string, key: string): string {
+export function decryptData(encrypted: string, _key: string): string {
   // Simple decryption (in production, use proper encryption library)
   return Buffer.from(encrypted, 'base64').toString('utf-8');
 }
@@ -114,7 +114,7 @@ export function getSessions(): Session[] {
   ];
 }
 
-export function terminateSession(sessionId: string): Promise<boolean> {
+export function terminateSession(_sessionId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -122,7 +122,7 @@ export function terminateSession(sessionId: string): Promise<boolean> {
   });
 }
 
-export function changePassword(oldPassword: string, newPassword: string): Promise<boolean> {
+export function changePassword(_oldPassword: string, _newPassword: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);

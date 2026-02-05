@@ -55,7 +55,7 @@ export function getDataRetentionPolicies(): DataRetentionPolicy[] {
   ];
 }
 
-export function setDataRetentionPolicy(dataType: string, retentionDays: number, autoDelete: boolean): void {
+export function setDataRetentionPolicy(_dataType: string, _retentionDays: number, _autoDelete: boolean): void {
   // Data retention policy set
 }
 

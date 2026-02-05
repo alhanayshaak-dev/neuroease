@@ -1,14 +1,6 @@
-import { createClient } from '@supabase/supabase-js';
 import { Database } from '@/types/database';
 
 export type Mode = Database['public']['Tables']['modes']['Row'];
-
-const getSupabase = () => {
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
-};
 
 export type PresetModeName = 'School' | 'Work' | 'Home' | 'Transit';
 

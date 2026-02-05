@@ -47,7 +47,6 @@ export function fullTextSearch(query: string, data: any[]): SearchResult[] {
 export function applyFilters(results: SearchResult[], filters: SearchFilter): SearchResult[] {
   return results.filter(result => {
     if (filters.type && result.type !== filters.type) return false;
-    if (filters.priority && result.type !== filters.priority) return false;
     if (filters.dateRange) {
       const resultDate = new Date(result.timestamp);
       const startDate = new Date(filters.dateRange.start);

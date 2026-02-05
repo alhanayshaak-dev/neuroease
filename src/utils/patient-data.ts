@@ -136,8 +136,8 @@ export function generateStrategyLogs(): StrategyLog[] {
 }
 
 export function generateStrategyRecommendations(
-  currentStress: number,
-  triggers: string[]
+  _currentStress: number,
+  _triggers: string[]
 ): StrategyRecommendation[] {
   return [
     {

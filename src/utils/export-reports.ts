@@ -44,7 +44,7 @@ export function exportToPDF(data: any): void {
   document.body.removeChild(element);
 }
 
-export function sendEmailReport(email: string, reportData: any): Promise<boolean> {
+export function sendEmailReport(_email: string, _reportData: any): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -52,10 +52,10 @@ export function sendEmailReport(email: string, reportData: any): Promise<boolean
   });
 }
 
-export function scheduleWeeklyReport(email: string): void {
+export function scheduleWeeklyReport(_email: string): void {
   // Weekly report scheduled
 }
 
-export function scheduleMonthlyReport(email: string): void {
+export function scheduleMonthlyReport(_email: string): void {
   // Monthly report scheduled
 }

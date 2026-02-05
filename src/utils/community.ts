@@ -189,7 +189,7 @@ export function createSuccessStory(
 export function generateAccommodationLetter(
   accommodation: Accommodation,
   studentName: string,
-  schoolName: string
+  _schoolName: string
 ): string {
   const date = new Date().toLocaleDateString();
 

@@ -164,7 +164,7 @@ export function updateStreak(
 }
 
 export function calculateBadgeProgress(
-  badgeId: string,
+  _badgeId: string,
   currentValue: number,
   targetValue: number
 ): number {

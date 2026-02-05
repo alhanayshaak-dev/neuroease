@@ -49,13 +49,13 @@ export const ROLE_PERMISSIONS: Record<Role, Permission[]> = {
   ],
 };
 
-export function getUserRole(userId: string): Role {
+export function getUserRole(_userId: string): Role {
   // In production, fetch from database
   return 'guardian';
 }
 
-export function hasPermission(userId: string, resource: string, action: 'read' | 'write' | 'delete' | 'admin'): boolean {
-  const role = getUserRole(userId);
+export function hasPermission(_userId: string, resource: string, action: 'read' | 'write' | 'delete' | 'admin'): boolean {
+  const role = getUserRole(_userId);
   const permissions = ROLE_PERMISSIONS[role];
   return permissions.some(p => p.resource === resource && p.action === action);
 }
@@ -77,21 +77,21 @@ export function getPermissionTemplates(): PermissionTemplate[] {
   ];
 }
 
-export function delegatePermission(from: string, to: string, permission: Permission, expiresInDays?: number): Promise<DelegatedPermission> {
+export function delegatePermission(_from: string, _to: string, _permission: Permission, _expiresInDays?: number): Promise<DelegatedPermission> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({
         id: Math.random().toString(36).substr(2, 9),
-        from,
-        to,
-        permission,
-        expiresAt: expiresInDays ? new Date(Date.now() + expiresInDays * 24 * 60 * 60 * 1000).toISOString() : undefined,
+        from: _from,
+        to: _to,
+        permission: _permission,
+        expiresAt: _expiresInDays ? new Date(Date.now() + _expiresInDays * 24 * 60 * 60 * 1000).toISOString() : undefined,
       });
     }, 500);
   });
 }
 
-export function revokeDelegatedPermission(delegationId: string): Promise<boolean> {
+export function revokeDelegatedPermission(_delegationId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -111,7 +111,7 @@ export function getDelegatedPermissions(userId: string): DelegatedPermission[] {
   ];
 }
 
-export function auditPermissionChange(userId: string, action: string, details: any): void {
+export function auditPermissionChange(_userId: string, _action: string, _details: any): void {
   // Permission audit logged
 }
 
@@ -129,7 +129,7 @@ export function getPermissionAuditLog(limit: number = 50): any[] {
   return logs;
 }
 
-export function createCustomRole(name: string, permissions: Permission[]): Promise<Role> {
+export function createCustomRole(_name: string, _permissions: Permission[]): Promise<Role> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve('viewer');

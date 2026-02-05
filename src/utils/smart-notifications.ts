@@ -148,10 +148,10 @@ export function getDoNotDisturb(): DoNotDisturbSettings {
   };
 }
 
-export function markNotificationAsRead(notificationId: string): void {
+export function markNotificationAsRead(_notificationId: string): void {
   // Mark notification as read
 }
 
-export function archiveNotification(notificationId: string): void {
+export function archiveNotification(_notificationId: string): void {
   // Archive notification
 }

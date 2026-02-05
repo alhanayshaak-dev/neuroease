@@ -104,18 +104,18 @@ export function verifyTwoFactorCode(code: string, expectedCode: string): boolean
   return code === expectedCode;
 }
 
-export function encryptData(data: string, key: string): string {
+export function encryptData(data: string, _key: string): string {
   // Mock encryption - in production use proper encryption library
   return Buffer.from(data).toString('base64');
 }
 
-export function decryptData(encrypted: string, key: string): string {
+export function decryptData(encrypted: string, _key: string): string {
   // Mock decryption - in production use proper encryption library
   return Buffer.from(encrypted, 'base64').toString('utf-8');
 }
 
 export function generateDataDeletionReport(
-  guardianId: string,
+  _guardianId: string,
   dataTypes: string[]
 ): {
   requestId: string;

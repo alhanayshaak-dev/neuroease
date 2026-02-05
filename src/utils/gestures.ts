@@ -1,14 +1,6 @@
-import { createClient } from '@supabase/supabase-js';
 import { Database } from '@/types/database';
 
 export type Gesture = Database['public']['Tables']['gestures']['Row'];
-
-const getSupabase = () => {
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
-};
 
 export type GestureType = 'long-press' | 'swipe' | 'double-tap' | 'triple-tap' | 'custom';
 

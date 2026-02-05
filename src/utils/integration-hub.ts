@@ -54,7 +54,7 @@ export function getAvailableIntegrations(): Integration[] {
   ];
 }
 
-export function connectIntegration(integrationId: string): Promise<boolean> {
+export function connectIntegration(_integrationId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -62,7 +62,7 @@ export function connectIntegration(integrationId: string): Promise<boolean> {
   });
 }
 
-export function disconnectIntegration(integrationId: string): Promise<boolean> {
+export function disconnectIntegration(_integrationId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -96,7 +96,7 @@ export function getWebhooks(): Webhook[] {
   ];
 }
 
-export function deleteWebhook(webhookId: string): Promise<boolean> {
+export function deleteWebhook(_webhookId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -131,7 +131,7 @@ export function getAPIKeys(): APIKey[] {
   ];
 }
 
-export function revokeAPIKey(keyId: string): Promise<boolean> {
+export function revokeAPIKey(_keyId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);

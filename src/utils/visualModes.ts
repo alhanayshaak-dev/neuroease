@@ -1,4 +1,3 @@
-import { createClient } from '@supabase/supabase-js';
 import { Database } from '@/types/database';
 
 export type Mode = Database['public']['Tables']['modes']['Row'];
@@ -73,13 +72,6 @@ export const DEFAULT_VISUAL_MODES: Record<VisualModeType, VisualModeConfig> = {
     fontSize: 105,
     highContrast: false,
   },
-};
-
-const getSupabase = () => {
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
 };
 
 /**

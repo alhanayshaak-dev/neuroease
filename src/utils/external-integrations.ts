@@ -16,7 +16,7 @@ export interface HealthAppData {
   lastSync: string;
 }
 
-export function connectToCalendar(provider: 'google' | 'outlook' | 'apple'): Promise<boolean> {
+export function connectToCalendar(_provider: 'google' | 'outlook' | 'apple'): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -47,7 +47,7 @@ export function syncCalendarEvents(): Promise<CalendarEvent[]> {
   });
 }
 
-export function connectToHealthApp(provider: 'apple-health' | 'google-fit' | 'fitbit'): Promise<boolean> {
+export function connectToHealthApp(_provider: 'apple-health' | 'google-fit' | 'fitbit'): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -55,11 +55,11 @@ export function connectToHealthApp(provider: 'apple-health' | 'google-fit' | 'fi
   });
 }
 
-export function syncHealthData(provider: 'apple-health' | 'google-fit' | 'fitbit'): Promise<HealthAppData> {
+export function syncHealthData(_provider: 'apple-health' | 'google-fit' | 'fitbit'): Promise<HealthAppData> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({
-        source: provider,
+        source: _provider,
         steps: 8234,
         heartRate: 72,
         calories: 2100,

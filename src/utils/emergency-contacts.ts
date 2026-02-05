@@ -78,7 +78,7 @@ export function getEmergencyProtocols(): EmergencyProtocol[] {
   ];
 }
 
-export function callEmergencyContact(contactId: string): Promise<boolean> {
+export function callEmergencyContact(_contactId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -86,7 +86,7 @@ export function callEmergencyContact(contactId: string): Promise<boolean> {
   });
 }
 
-export function sendEmergencyAlert(message: string, contactIds: string[]): Promise<boolean> {
+export function sendEmergencyAlert(_message: string, _contactIds: string[]): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -94,7 +94,7 @@ export function sendEmergencyAlert(message: string, contactIds: string[]): Promi
   });
 }
 
-export function activateEmergencyProtocol(protocolId: string): Promise<boolean> {
+export function activateEmergencyProtocol(_protocolId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);

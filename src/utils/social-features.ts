@@ -137,7 +137,7 @@ export function getAchievements(): Achievement[] {
   ];
 }
 
-export function shareAchievement(achievementId: string): Promise<boolean> {
+export function shareAchievement(_achievementId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -145,7 +145,7 @@ export function shareAchievement(achievementId: string): Promise<boolean> {
   });
 }
 
-export function joinChallenge(challengeId: string): Promise<boolean> {
+export function joinChallenge(_challengeId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -153,7 +153,7 @@ export function joinChallenge(challengeId: string): Promise<boolean> {
   });
 }
 
-export function joinSupportGroup(groupId: string): Promise<boolean> {
+export function joinSupportGroup(_groupId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -161,7 +161,7 @@ export function joinSupportGroup(groupId: string): Promise<boolean> {
   });
 }
 
-export function followUser(userId: string): Promise<boolean> {
+export function followUser(_userId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
