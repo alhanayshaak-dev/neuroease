@@ -20,7 +20,7 @@ interface MedicalFileManagerProps {
 }
 
 export function MedicalFileManager({
-  patientId,
+  patientId: _patientId,
   files = [],
   onFileUpload,
   onFileDelete,
