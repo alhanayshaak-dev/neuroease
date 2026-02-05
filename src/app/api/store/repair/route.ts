@@ -98,8 +98,12 @@ export async function GET() {
       count: mockRepairOptions.length,
     });
   } catch (error) {
-    console.error('Error in GET /api/store/repair:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    // Log error for monitoring (in production, use error tracking service)
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    return NextResponse.json(
+      { error: 'Failed to fetch repair options', message: errorMessage },
+      { status: 500 }
+    );
   }
 }
 
