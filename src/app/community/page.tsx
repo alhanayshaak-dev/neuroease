@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { AppLayout } from '@/components/AppLayout';
 import { StrategyCard } from '@/components/StrategyCard';
 import { CommunityStrategy, AgeGroup, StrategyCategory } from '@/types';
@@ -25,7 +25,7 @@ export default function CommunityPage() {
   ];
   const ageGroups: AgeGroup[] = ['child', 'teen', 'adult', 'all'];
 
-  const fetchStrategies = async () => {
+  const fetchStrategies = useCallback(async () => {
     try {
       setLoading(true);
       const params = new URLSearchParams({
@@ -56,11 +56,11 @@ export default function CommunityPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedAgeGroup, sortBy, searchTerm, selectedCategory]);
 
   useEffect(() => {
     fetchStrategies();
-  }, [searchTerm, selectedAgeGroup, selectedCategory, sortBy]);
+  }, [fetchStrategies]);
 
   const handleRate = async (strategyId: string, rating: number) => {
     try {
