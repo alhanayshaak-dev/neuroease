@@ -18,7 +18,7 @@ interface DeviceTileProps {
   onRemove?: () => void;
 }
 
-export function DeviceTile({ device, _onSettings, _onRemove }: DeviceTileProps) {
+export function DeviceTile({ device, onSettings: _onSettings, onRemove: _onRemove }: DeviceTileProps) {
   const batteryPercentage = device.battery_level;
   const isConnected = device.is_connected;
   const hasDamage = Object.keys(device.damage_state || {}).length > 0;
