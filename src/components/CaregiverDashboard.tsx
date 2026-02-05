@@ -38,7 +38,7 @@ export function CaregiverDashboard({ patientId }: CaregiverDashboardProps) {
 
   useEffect(() => {
     loadPatientData();
-  }, [patientId]);
+  }, [patientId, loadPatientData]);
 
   useEffect(() => {
     if (latestSensorData) {

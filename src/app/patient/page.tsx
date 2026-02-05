@@ -25,7 +25,7 @@ export default function PatientPage() {
 
   useEffect(() => {
     loadPatientData();
-  }, []);
+  }, [loadPatientData]);
 
   const loadPatientData = async () => {
     try {

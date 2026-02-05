@@ -27,7 +27,7 @@ export default function CommunityPage() {
 
   useEffect(() => {
     fetchStrategies();
-  }, [searchTerm, selectedAgeGroup, selectedCategory, sortBy]);
+  }, [searchTerm, selectedAgeGroup, selectedCategory, sortBy, fetchStrategies]);
 
   const fetchStrategies = async () => {
     try {

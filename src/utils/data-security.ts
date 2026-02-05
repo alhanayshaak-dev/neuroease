@@ -37,13 +37,17 @@ export function getSecuritySettings(): SecuritySettings {
 }
 
 export function enableTwoFactor(): Promise<{ secret: string; qrCode: string }> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
+  return new Promise((resolve, reject) => {
+    try {
+      // TODO: Implement actual 2FA setup with proper secret generation
+      // This should use a library like speakeasy or similar
       resolve({
-        secret: 'JBSWY3DPEBLW64TMMQ======',
-        qrCode: 'https://api.example.com/qr/2fa',
+        secret: 'PLACEHOLDER_SECRET_REPLACE_WITH_REAL_VALUE',
+        qrCode: 'PLACEHOLDER_QR_CODE_REPLACE_WITH_REAL_VALUE',
       });
-    }, 1000);
+    } catch (error) {
+      reject(new Error('Failed to enable two-factor authentication'));
+    }
   });
 }
 

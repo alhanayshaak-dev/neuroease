@@ -15,10 +15,15 @@ export interface HomeScreenWidget {
 }
 
 export function registerPushNotifications(): Promise<string> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve('push-token-xyz123');
-    }, 1000);
+  return new Promise((resolve, reject) => {
+    // In production, this should call the actual push notification service
+    // For now, return a placeholder that should be replaced with real implementation
+    try {
+      // TODO: Implement actual push notification registration
+      resolve('push-token-placeholder');
+    } catch (error) {
+      reject(new Error('Failed to register push notifications'));
+    }
   });
 }
 
