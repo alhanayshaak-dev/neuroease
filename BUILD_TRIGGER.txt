@@ -1,0 +1,11 @@
+Build Trigger: Force Vercel to clear cache and rebuild
+Timestamp: 2026-02-05 21:14:42
+Reason: Resolve cached build error with AlertCircle title attribute
+Action: Clear Vercel build cache and redeploy
+
+The local code is correct:
+- Line 85 in DeviceTile.tsx uses aria-label (not title)
+- All lucide components are properly configured
+- No title attributes on lucide components
+
+Vercel is showing cached/stale code. This file forces a fresh build.
