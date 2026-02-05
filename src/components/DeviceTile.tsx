@@ -1,6 +1,6 @@
 'use client';
 
-// Force rebuild v4
+// Force rebuild v5 - Clean build
 import React from 'react';
 import {
   Battery,
