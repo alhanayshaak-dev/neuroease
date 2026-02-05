@@ -35,6 +35,8 @@ import {
   generateStrategyRecommendations,
   generateRefillReminders,
   checkDrugInteractions,
+  TriggerLog,
+  StrategyLog,
 } from '@/utils/patient-data';
 
 export default function PatientPage() {
@@ -45,8 +47,8 @@ export default function PatientPage() {
   };
   const [activeTab, setActiveTab] = useState<'overview' | 'tracking' | 'analytics' | 'health' | 'insights'>('overview');
   const [showDrugInteractionsDisclaimer, setShowDrugInteractionsDisclaimer] = useState(false);
-  const [showTriggerDetail, setShowTriggerDetail] = useState<string | null>(null);
-  const [showStrategyDetail, setShowStrategyDetail] = useState<string | null>(null);
+  const [showTriggerDetail, setShowTriggerDetail] = useState<TriggerLog | null>(null);
+  const [showStrategyDetail, setShowStrategyDetail] = useState<StrategyLog | null>(null);
 
   const medicationLogs = generateMedicationLogs();
   const triggerLogs = generateTriggerLogs();
