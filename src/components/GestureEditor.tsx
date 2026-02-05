@@ -17,7 +17,7 @@ const ACTIONS = ['toggle-emergency', 'open-menu', 'call-guardian', 'activate-str
 export function GestureEditor({
   gestures,
   onAddGesture,
-  onUpdateGesture,
+  _onUpdateGesture,
   onDeleteGesture,
 }: GestureEditorProps) {
   const [showForm, setShowForm] = useState(false);

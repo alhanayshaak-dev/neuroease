@@ -19,7 +19,7 @@ const MESSAGE_TYPE_COLORS: Record<string, { bg: string; text: string; label: str
   general: { bg: 'bg-neutral-700/50', text: 'text-neutral-300', label: 'Message' },
 };
 
-export function CareCircleMessages({}: CareCircleMessagesProps) {
+export function CareCircleMessages({ _patientId }: CareCircleMessagesProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [newMessage, setNewMessage] = useState('');
