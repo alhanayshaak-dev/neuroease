@@ -705,30 +705,30 @@ export default function PatientPage() {
             <div className="space-y-4 mb-6">
               <div className="bg-black/70 rounded p-4">
                 <p className="text-gray-400 text-sm mb-1">Trigger</p>
-                <p className="text-white font-semibold text-lg">{showTriggerDetail.trigger}</p>
+                <p className="text-white font-semibold text-lg">{showTriggerDetail!.trigger}</p>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-black/70 rounded p-4">
                   <p className="text-gray-400 text-xs mb-1">Severity</p>
-                  <p className="text-white font-bold text-2xl">{showTriggerDetail.severity}/5</p>
+                  <p className="text-white font-bold text-2xl">{showTriggerDetail!.severity}/5</p>
                 </div>
                 <div className="bg-black/70 rounded p-4">
                   <p className="text-gray-400 text-xs mb-1">Stress Level</p>
-                  <p className="text-white font-bold text-2xl">{showTriggerDetail.stressLevel}%</p>
+                  <p className="text-white font-bold text-2xl">{showTriggerDetail!.stressLevel}%</p>
                 </div>
               </div>
               <div className="bg-black/70 rounded p-4">
                 <p className="text-gray-400 text-sm mb-1">Location</p>
-                <p className="text-white">{showTriggerDetail.location}</p>
+                <p className="text-white">{showTriggerDetail!.location}</p>
               </div>
               <div className="bg-black/70 rounded p-4">
                 <p className="text-gray-400 text-sm mb-1">Time</p>
-                <p className="text-white">{showTriggerDetail.timestamp}</p>
+                <p className="text-white">{showTriggerDetail!.timestamp}</p>
               </div>
-              {showTriggerDetail.context && (
+              {showTriggerDetail!.context && (
                 <div className="bg-black/70 rounded p-4">
                   <p className="text-gray-400 text-sm mb-1">Context</p>
-                  <p className="text-white">{showTriggerDetail.context}</p>
+                  <p className="text-white">{showTriggerDetail!.context}</p>
                 </div>
               )}
             </div>
@@ -758,32 +758,32 @@ export default function PatientPage() {
             <div className="space-y-4 mb-6">
               <div className="bg-black/70 rounded p-4">
                 <p className="text-gray-400 text-sm mb-1">Strategy</p>
-                <p className="text-white font-semibold text-lg">{showStrategyDetail.strategy}</p>
+                <p className="text-white font-semibold text-lg">{showStrategyDetail!.strategy}</p>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-black/70 rounded p-4">
                   <p className="text-gray-400 text-xs mb-1">Effectiveness</p>
-                  <p className="text-white font-bold text-2xl">{showStrategyDetail.effectiveness}/5</p>
+                  <p className="text-white font-bold text-2xl">{showStrategyDetail!.effectiveness}/5</p>
                 </div>
                 <div className="bg-black/70 rounded p-4">
                   <p className="text-gray-400 text-xs mb-1">Duration</p>
-                  <p className="text-white font-bold text-lg">{showStrategyDetail.duration} min</p>
+                  <p className="text-white font-bold text-lg">{showStrategyDetail!.duration} min</p>
                 </div>
               </div>
               <div className="bg-black/70 rounded p-4">
                 <p className="text-gray-400 text-sm mb-1">Time Used</p>
-                <p className="text-white">{showStrategyDetail.timestamp}</p>
+                <p className="text-white">{showStrategyDetail!.timestamp}</p>
               </div>
-              {showStrategyDetail.notes && (
+              {showStrategyDetail!.notes && (
                 <div className="bg-black/70 rounded p-4">
                   <p className="text-gray-400 text-sm mb-1">Notes</p>
-                  <p className="text-white">{showStrategyDetail.notes}</p>
+                  <p className="text-white">{showStrategyDetail!.notes}</p>
                 </div>
               )}
               <div className="bg-teal-900/30 border border-teal-600/50 rounded p-4">
                 <p className="text-teal-400 text-sm font-semibold">Recommendation</p>
                 <p className="text-gray-300 text-xs mt-2">
-                  This strategy was {showStrategyDetail.effectiveness >= 4 ? 'highly effective' : showStrategyDetail.effectiveness >= 3 ? 'moderately effective' : 'less effective'} for managing stress. Consider using it again in similar situations.
+                  This strategy was {showStrategyDetail!.effectiveness >= 4 ? 'highly effective' : showStrategyDetail!.effectiveness >= 3 ? 'moderately effective' : 'less effective'} for managing stress. Consider using it again in similar situations.
                 </p>
               </div>
             </div>
