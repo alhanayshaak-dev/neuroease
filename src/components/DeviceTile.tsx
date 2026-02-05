@@ -82,7 +82,7 @@ export function DeviceTile({ device, onSettings, onRemove }: DeviceTileProps) {
             <p className="text-sm text-neutral-400">{getDeviceTypeLabel()}</p>
           </div>
         </div>
-        {hasDamage && <AlertCircle className="w-5 h-5 text-red-500" title="Device has damage" />}
+        {hasDamage && <AlertCircle className="w-5 h-5 text-red-500" aria-label="Device has damage" />}
       </div>
 
       {/* Status indicators */}
