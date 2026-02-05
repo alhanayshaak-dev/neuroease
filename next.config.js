@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: process.env.NODE_ENV === 'production',
+  // Build timestamp: 2026-02-05T21:34:43Z - Force cache clear
   images: {
     remotePatterns: [
       {
