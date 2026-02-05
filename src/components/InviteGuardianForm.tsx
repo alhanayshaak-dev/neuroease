@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { createDefaultPermissions } from '@/utils/permissions';
 
 interface InviteGuardianFormProps {
   onSubmit: (data: {
