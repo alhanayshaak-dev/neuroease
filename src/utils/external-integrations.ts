@@ -19,7 +19,6 @@ export interface HealthAppData {
 export function connectToCalendar(provider: 'google' | 'outlook' | 'apple'): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Connected to ${provider} calendar`);
       resolve(true);
     }, 1000);
   });
@@ -51,7 +50,6 @@ export function syncCalendarEvents(): Promise<CalendarEvent[]> {
 export function connectToHealthApp(provider: 'apple-health' | 'google-fit' | 'fitbit'): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Connected to ${provider}`);
       resolve(true);
     }, 1000);
   });

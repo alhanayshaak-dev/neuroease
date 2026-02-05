@@ -149,9 +149,9 @@ export function getDoNotDisturb(): DoNotDisturbSettings {
 }
 
 export function markNotificationAsRead(notificationId: string): void {
-  console.log(`Marked notification ${notificationId} as read`);
+  // Mark notification as read
 }
 
 export function archiveNotification(notificationId: string): void {
-  console.log(`Archived notification ${notificationId}`);
+  // Archive notification
 }

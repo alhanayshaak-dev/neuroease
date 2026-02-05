@@ -140,7 +140,6 @@ export function getAchievements(): Achievement[] {
 export function shareAchievement(achievementId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Achievement ${achievementId} shared to community`);
       resolve(true);
     }, 500);
   });
@@ -149,7 +148,6 @@ export function shareAchievement(achievementId: string): Promise<boolean> {
 export function joinChallenge(challengeId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Joined challenge ${challengeId}`);
       resolve(true);
     }, 500);
   });
@@ -158,7 +156,6 @@ export function joinChallenge(challengeId: string): Promise<boolean> {
 export function joinSupportGroup(groupId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Joined support group ${groupId}`);
       resolve(true);
     }, 500);
   });
@@ -167,7 +164,6 @@ export function joinSupportGroup(groupId: string): Promise<boolean> {
 export function followUser(userId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Following user ${userId}`);
       resolve(true);
     }, 500);
   });

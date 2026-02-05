@@ -40,7 +40,6 @@ export class PerformanceMonitor {
     };
 
     this.errors.push(report);
-    console.error('Error tracked:', report);
   }
 
   static createAlert(type: 'error' | 'warning' | 'info', message: string, severity: 'low' | 'medium' | 'high' | 'critical'): void {
@@ -53,9 +52,6 @@ export class PerformanceMonitor {
     };
 
     this.alerts.push(alert);
-    if (severity === 'critical') {
-      console.error('Critical alert:', alert);
-    }
   }
 
   static getAlerts(): PerformanceAlert[] {
@@ -106,17 +102,17 @@ export function getServerStatus(): 'healthy' | 'degraded' | 'down' {
 }
 
 export function enableRealUserMonitoring(): void {
-  console.log('Real User Monitoring enabled');
+  // Real User Monitoring enabled
 }
 
 export function trackPageView(pageName: string): void {
-  console.log(`Page view tracked: ${pageName}`);
+  // Page view tracked
 }
 
 export function trackUserAction(action: string, details?: any): void {
-  console.log(`User action tracked: ${action}`, details);
+  // User action tracked
 }
 
 export function setUpAlertThreshold(metric: string, threshold: number): void {
-  console.log(`Alert threshold set for ${metric}: ${threshold}`);
+  // Alert threshold set
 }

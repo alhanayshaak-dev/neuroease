@@ -56,7 +56,7 @@ export function getDataRetentionPolicies(): DataRetentionPolicy[] {
 }
 
 export function setDataRetentionPolicy(dataType: string, retentionDays: number, autoDelete: boolean): void {
-  console.log(`Data retention policy set for ${dataType}: ${retentionDays} days`);
+  // Data retention policy set
 }
 
 export function generateComplianceReport(type: 'HIPAA' | 'GDPR' | 'CCPA'): Promise<ComplianceReport> {

@@ -79,7 +79,7 @@ export function announceToScreenReader(message: string): void {
 
 export function enableVoiceCommands(): void {
   if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
-    console.log('Voice commands available');
+    // Voice commands available
   }
 }
 

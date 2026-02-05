@@ -94,7 +94,6 @@ export function delegatePermission(from: string, to: string, permission: Permiss
 export function revokeDelegatedPermission(delegationId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Delegated permission ${delegationId} revoked`);
       resolve(true);
     }, 500);
   });
@@ -113,7 +112,7 @@ export function getDelegatedPermissions(userId: string): DelegatedPermission[] {
 }
 
 export function auditPermissionChange(userId: string, action: string, details: any): void {
-  console.log(`Permission audit: ${userId} - ${action}`, details);
+  // Permission audit logged
 }
 
 export function getPermissionAuditLog(limit: number = 50): any[] {
@@ -133,7 +132,6 @@ export function getPermissionAuditLog(limit: number = 50): any[] {
 export function createCustomRole(name: string, permissions: Permission[]): Promise<Role> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Custom role ${name} created`);
       resolve('viewer');
     }, 500);
   });

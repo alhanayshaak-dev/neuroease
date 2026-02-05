@@ -25,7 +25,6 @@ export function registerPushNotifications(): Promise<string> {
 export function sendPushNotification(title: string, message: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Push notification sent: ${title}`);
       resolve(true);
     }, 500);
   });
@@ -66,7 +65,6 @@ export function getHomeScreenWidgets(): HomeScreenWidget[] {
 export function addHomeScreenWidget(widget: HomeScreenWidget): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Widget ${widget.name} added to home screen`);
       resolve(true);
     }, 500);
   });
@@ -83,7 +81,6 @@ export function isOfflineMode(): boolean {
 export function enableBiometricAuth(): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log('Biometric authentication enabled');
       resolve(true);
     }, 1000);
   });
@@ -100,7 +97,6 @@ export function authenticateWithBiometric(): Promise<boolean> {
 export function shareToNativeApp(data: any, appName: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Shared to ${appName}`);
       resolve(true);
     }, 500);
   });

@@ -58,7 +58,6 @@ export function verifyTwoFactor(code: string): Promise<boolean> {
 export function enableBiometric(): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log('Biometric authentication enabled');
       resolve(true);
     }, 1000);
   });
@@ -114,7 +113,6 @@ export function getSessions(): Session[] {
 export function terminateSession(sessionId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Session ${sessionId} terminated`);
       resolve(true);
     }, 500);
   });
@@ -123,7 +121,6 @@ export function terminateSession(sessionId: string): Promise<boolean> {
 export function changePassword(oldPassword: string, newPassword: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log('Password changed successfully');
       resolve(true);
     }, 1000);
   });

@@ -57,7 +57,6 @@ export function getAvailableIntegrations(): Integration[] {
 export function connectIntegration(integrationId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Integration ${integrationId} connected`);
       resolve(true);
     }, 1000);
   });
@@ -66,7 +65,6 @@ export function connectIntegration(integrationId: string): Promise<boolean> {
 export function disconnectIntegration(integrationId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Integration ${integrationId} disconnected`);
       resolve(true);
     }, 500);
   });
@@ -101,7 +99,6 @@ export function getWebhooks(): Webhook[] {
 export function deleteWebhook(webhookId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Webhook ${webhookId} deleted`);
       resolve(true);
     }, 500);
   });
@@ -137,7 +134,6 @@ export function getAPIKeys(): APIKey[] {
 export function revokeAPIKey(keyId: string): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`API key ${keyId} revoked`);
       resolve(true);
     }, 500);
   });

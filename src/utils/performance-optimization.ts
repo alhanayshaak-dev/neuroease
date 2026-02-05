@@ -107,9 +107,9 @@ export function prefetchResource(url: string, type: 'script' | 'style' | 'image'
 }
 
 export function enableCodeSplitting(): void {
-  console.log('Code splitting enabled');
+  // Code splitting enabled
 }
 
 export function optimizeBundle(): void {
-  console.log('Bundle optimization enabled');
+  // Bundle optimization enabled
 }

@@ -187,9 +187,6 @@ export async function applyMaxNoiseReduction(patientId: string): Promise<boolean
   }
 
   // In a real implementation, this would send commands to devices
-  // For now, we'll just log the action
-  console.log(`Applying max noise reduction to ${neurobuds.length} Neurobud devices`);
-
   return true;
 }
 
@@ -210,7 +207,6 @@ export async function enableEscapeMode(patientId: string): Promise<boolean> {
   // 3. Disables all gestures except emergency exit
   // 4. Maximizes screen real estate for calming content
 
-  console.log(`Escape mode enabled for patient ${patientId}`);
   return true;
 }
 

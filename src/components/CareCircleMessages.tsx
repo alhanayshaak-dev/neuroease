@@ -1,9 +1,5 @@
 'use client';
 
-// Force rebuild v4 v3
-
-// Force rebuild
-
 import { Database } from '@/types/database';
 import { useEffect, useState } from 'react';
 import { useRealtimeSubscription } from '@/hooks/useRealtimeSubscription';

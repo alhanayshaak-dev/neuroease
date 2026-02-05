@@ -79,7 +79,6 @@ export function getSurveys(): Survey[] {
 export function submitSurveyResponse(surveyId: string, answers: Record<string, any>): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Survey ${surveyId} response submitted`);
       resolve(true);
     }, 500);
   });
@@ -104,7 +103,6 @@ export function calculateNPS(ratings: number[]): NPSData {
 export function voteOnFeature(featureId: string, vote: 'up' | 'down'): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Voted ${vote} on feature ${featureId}`);
       resolve(true);
     }, 500);
   });

@@ -47,16 +47,15 @@ export function exportToPDF(data: any): void {
 export function sendEmailReport(email: string, reportData: any): Promise<boolean> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`Report sent to ${email}`);
       resolve(true);
     }, 1000);
   });
 }
 
 export function scheduleWeeklyReport(email: string): void {
-  console.log(`Weekly report scheduled for ${email}`);
+  // Weekly report scheduled
 }
 
 export function scheduleMonthlyReport(email: string): void {
-  console.log(`Monthly report scheduled for ${email}`);
+  // Monthly report scheduled
 }
