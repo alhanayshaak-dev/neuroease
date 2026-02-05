@@ -59,7 +59,7 @@ export default function CareCirclePage() {
     }
   };
 
-  const handleUpdatePermissions = async (permissions: any) => {
+  const handleUpdatePermissions = async (permissions: Record<string, boolean>) => {
     if (!selectedGuardian) return;
 
     try {

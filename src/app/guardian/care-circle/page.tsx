@@ -236,7 +236,9 @@ export default function CareCirclePage() {
           <button
             onClick={() => window.history.back()}
             className="text-gray-400 hover:text-white transition-colors p-2"
+            type="button"
             title="Go back"
+            aria-label="Go back"
           >
             <span className="text-2xl font-bold">✕</span>
           </button>
@@ -474,7 +476,9 @@ export default function CareCirclePage() {
                         setShowEditMemberModal(true);
                       }}
                       className="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-xs rounded font-semibold transition-colors"
+                      type="button"
                       title="Edit member"
+                      aria-label="Edit member"
                     >
                       Edit
                     </button>
@@ -483,6 +487,7 @@ export default function CareCirclePage() {
                       onClick={() => handleDeleteMember(guardian.id)}
                       className="px-3 py-1 bg-red-600 hover:bg-red-700 text-white text-xs rounded font-semibold transition-colors"
                       title="Delete member"
+                      aria-label="Delete member"
                     >
                       Delete
                     </button>

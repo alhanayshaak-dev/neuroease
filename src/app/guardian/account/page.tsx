@@ -81,8 +81,10 @@ export default function AccountPage() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => window.history.back()}
+              type="button"
               className="text-gray-400 hover:text-white transition-colors p-2"
               title="Go back"
+              aria-label="Go back"
             >
               <span className="text-2xl font-bold">✕</span>
             </button>

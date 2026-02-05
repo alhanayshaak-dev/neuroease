@@ -99,6 +99,7 @@ export default function GuardianDashboard() {
             href="/guardian/settings"
             className="p-2 hover:bg-navy-900 rounded-lg transition-colors"
             title="Settings"
+            aria-label="Settings"
           >
             <Settings size={24} className="text-teal-400" />
           </Link>

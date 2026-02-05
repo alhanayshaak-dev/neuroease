@@ -127,3 +127,20 @@ export function validateModeConfig(
     errors,
   };
 }
+
+
+/**
+ * Switch to a different mode
+ */
+export function switchMode(
+  modeName: PresetModeName,
+  settings: Omit<Mode, 'id' | 'patient_id' | 'created_at' | 'mode_name'>
+): boolean {
+  const validation = validateModeConfig(modeName, settings);
+  if (!validation.valid) {
+    console.error('Invalid mode configuration:', validation.errors);
+    return false;
+  }
+  // Switch mode logic here
+  return true;
+}

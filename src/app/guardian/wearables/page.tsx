@@ -130,7 +130,9 @@ export default function WearablesPage() {
           <button
             onClick={() => window.history.back()}
             className="text-gray-400 hover:text-white transition-colors p-2"
+            type="button"
             title="Go back"
+            aria-label="Go back"
           >
             <span className="text-2xl font-bold">✕</span>
           </button>

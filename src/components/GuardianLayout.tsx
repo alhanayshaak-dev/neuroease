@@ -29,7 +29,7 @@ export function GuardianLayout({ children }: GuardianLayoutProps) {
 
           {/* Right Actions */}
           <div className="flex items-center gap-4">
-            <button className="text-gray-400 hover:text-cyan-400 transition-colors" aria-label="Immersive Reader">
+            <button className="text-gray-400 hover:text-cyan-400 transition-colors" type="button" aria-label="Immersive Reader">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />

@@ -74,7 +74,9 @@ export function GestureEditor({
                   <button type="button"
                     onClick={() => onDeleteGesture(gesture.id)}
                     className="p-2 hover:bg-red-900 rounded transition-colors"
+                    type="button"
                     title="Delete gesture"
+                    aria-label="Delete gesture"
                   >
                     <Trash2 className="w-5 h-5 text-red-500" />
                   </button>

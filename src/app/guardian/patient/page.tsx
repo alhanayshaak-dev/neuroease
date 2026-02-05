@@ -45,8 +45,8 @@ export default function PatientPage() {
   };
   const [activeTab, setActiveTab] = useState<'overview' | 'tracking' | 'analytics' | 'health' | 'insights'>('overview');
   const [showDrugInteractionsDisclaimer, setShowDrugInteractionsDisclaimer] = useState(false);
-  const [showTriggerDetail, setShowTriggerDetail] = useState<any>(null);
-  const [showStrategyDetail, setShowStrategyDetail] = useState<any>(null);
+  const [showTriggerDetail, setShowTriggerDetail] = useState<string | null>(null);
+  const [showStrategyDetail, setShowStrategyDetail] = useState<string | null>(null);
 
   const medicationLogs = generateMedicationLogs();
   const triggerLogs = generateTriggerLogs();
@@ -67,8 +67,10 @@ export default function PatientPage() {
           </div>
           <button
             onClick={() => window.history.back()}
+            type="button"
             className="text-gray-400 hover:text-white transition-colors p-2"
             title="Go back"
+            aria-label="Go back"
           >
             <span className="text-2xl font-bold">✕</span>
           </button>
